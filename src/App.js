@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React,{Component} from 'react';
+import './style/test.scss'
+import ResizibleSideNav from "./components/context/ResizibleSideNav";
+import Canvas from "./components/context/Canvas";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+class App extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            resizableWidth: 0
+        }
+    }
+
+    onChangeWidth = (newWidth) =>{
+        this.setState({resizableWidth: newWidth});
+    }
+
+    render(){
+     return(
+         <div className="App">
+             <ResizibleSideNav onChangeWidth={this.onChangeWidth}/>
+             <Canvas resizableWidth={this.state.resizableWidth}/>
+         </div>
+     )
+    }
 }
 
 export default App;
