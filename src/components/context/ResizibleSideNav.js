@@ -38,6 +38,7 @@ class ResizibleSideNav extends Component{
 
 
     render(){
+        
         return (
             <div className="resize_side_nav">
                     <div style={{width: this.state.width}} className='resize_side_nav_container'>
