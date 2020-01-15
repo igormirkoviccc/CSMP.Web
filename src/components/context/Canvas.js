@@ -32,24 +32,30 @@ class Canvas extends Component{
         });
     };
 
-
-
-
     render(){
         return (
-            <div className='canvas_context'>
+            <div style={{width: window.innerWidth - this.props.resizableWidth}} className='canvas_context'>
                 <Stage width={window.innerWidth - this.props.resizableWidth - 100} height={window.innerHeight}>
                     <Layer>
+                        {[...Array(10)].map((_, i) => (
                         <Rect
+                            key={i}
                             x={20}
                             y={20}
-                            width={50}
-                            height={50}
-                            fill={'#86cfca'}
-                            shadowBlur={5}
+                            numPoints={5}
+                            innerRadius={20}
+                            outerRadius={40}
+                            fill="#89b717"
+                            opacity={0.8}
+                            draggable
+                            rotation={Math.random() * 180}
+                            shadowColor="black"
+                            shadowBlur={10}
+                            shadowOpacity={0.6}
                             onDragStart={this.handleDragStart}
                             onDragEnd={this.handleDragEnd}
                         />
+                        ))}
                     </Layer>
                 </Stage>
             </div>

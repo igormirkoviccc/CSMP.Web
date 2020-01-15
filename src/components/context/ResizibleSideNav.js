@@ -15,20 +15,21 @@ class ResizibleSideNav extends Component{
     }
 
     onResize = (e) =>{
-        const dx = this.state.m_pos - e.x;
-        this.setState({m_pos : e.x, width: (parseInt(getComputedStyle(document.getElementsByClassName('resize_side_nav_container')[0], '').width) - dx)}, () =>{
-            this.props.onChangeWidth(this.state.width);
-        });
+            const dx = this.state.m_pos - e.x;
+            this.setState({m_pos : e.x, width: (parseInt(getComputedStyle(document.getElementsByClassName('resize_side_nav_container')[0], '').width) - dx)}, () =>{
+                this.props.onChangeWidth(this.state.width);
+            });
 
     }
 
     componentDidMount() {
         const panel = document.getElementsByClassName("resize_side_nav_container")[0];
         panel.addEventListener("mousedown", (e) =>{
-            if (e.offsetX > this.state.width - 15) {
-                this.setState({m_pos:  e.x});
-                document.addEventListener("mousemove", this.onResize, false);
-            }
+                if (e.offsetX > this.state.width - 15) {
+                    console.log(e.offsetX)
+                    this.setState({m_pos:  e.x});
+                    document.addEventListener("mousemove", this.onResize, false);
+                }
         }, false);
 
         document.addEventListener("mouseup", ()=>{
@@ -38,7 +39,7 @@ class ResizibleSideNav extends Component{
 
 
     render(){
-        
+
         return (
             <div className="resize_side_nav">
                     <div style={{width: this.state.width}} className='resize_side_nav_container'>
