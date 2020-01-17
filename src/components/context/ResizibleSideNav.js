@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../style/test.scss'
 import SideNav from "./SideNav";
+import Operation from "../Operation";
 
 
 
@@ -21,6 +22,16 @@ class ResizibleSideNav extends Component{
             });
 
     }
+
+    addToArray = (item) =>{
+        this.props.onClickOperation(item);
+    }
+
+    mapData = () =>{
+        return global._data.map((item,index) =>{
+            return <Operation onClickOperation={() => this.addToArray(item)} key={'_' + index} item={item}/>
+        })
+    };
 
     componentDidMount() {
         const panel = document.getElementsByClassName("resize_side_nav_container")[0];
@@ -43,7 +54,11 @@ class ResizibleSideNav extends Component{
         return (
             <div className="resize_side_nav">
                     <div style={{width: this.state.width}} className='resize_side_nav_container'>
-                        <SideNav />
+                        <div className='side_nav'>
+                            <div className='side_nav_container'>
+                                {this.mapData()}
+                            </div>
+                        </div>
                     </div>
             </div>
         );

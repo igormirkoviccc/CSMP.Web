@@ -9,6 +9,10 @@ class SideNav extends Component{
         }
     }
 
+    addToArray = () =>{
+
+    }
+
     mapData = () =>{
         return global._data.map((item,index) =>{
             return <Operation key={'_' + index} item={item}/>

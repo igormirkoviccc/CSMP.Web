@@ -5,7 +5,7 @@ import '../style/test.scss'
 
 function Operation(props) {
     return (
-        <div className='operation_context'>
+        <div onClick={()=> props.onClickOperation()} className='operation_context'>
             <div class='operation_container'>
             {props.item.label}
             </div>

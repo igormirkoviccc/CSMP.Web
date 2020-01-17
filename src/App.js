@@ -9,7 +9,8 @@ class App extends Component {
     constructor(props){
         super(props);
         this.state = {
-            resizableWidth: 0
+            resizableWidth: 0,
+            currentItems:[]
         }
     }
 
@@ -17,11 +18,17 @@ class App extends Component {
         this.setState({resizableWidth: newWidth});
     }
 
+    onClickOperation = (operation) =>{
+        this.setState(prevState => ({
+            currentItems: [...prevState.currentItems, operation]
+        }))
+    }
+
     render(){
      return(
          <div className="App">
-             <ResizibleSideNav onChangeWidth={this.onChangeWidth}/>
-             <Canvas resizableWidth={this.state.resizableWidth}/>
+             <ResizibleSideNav onClickOperation={this.onClickOperation} onChangeWidth={this.onChangeWidth}/>
+             <Canvas currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
          </div>
      )
     }
