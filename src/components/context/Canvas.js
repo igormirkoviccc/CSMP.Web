@@ -23,7 +23,8 @@ class Canvas extends Component{
                                 draggable
                                 width={50}
                                 height={50}
-                                fill={'blue'}
+                                fill={'#86cfca'}
+                                borderRadius={7}
                                 className='operation_container'
                             />
                         })}
