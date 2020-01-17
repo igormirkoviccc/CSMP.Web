@@ -4,14 +4,16 @@
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/test.scss" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -26,10 +28,16 @@
   </component>
   <component name="ProjectId" id="1VArV7A7azFiZk217muzVa45Y8z" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -44,18 +52,6 @@
       <recent name="C:\Work\csmpweb\src\style" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -66,10 +62,22 @@
       <scripts>
         <script value="start" />
       </scripts>
-      <node-interpreter value="project" />
+      <node-interpreter value="node" />
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -87,6 +95,8 @@
       <workItem from="1577051832827" duration="783000" />
       <workItem from="1577223704599" duration="161000" />
       <workItem from="1579125321042" duration="2235000" />
+      <workItem from="1579273023116" duration="46000" />
+      <workItem from="1579273070379" duration="863000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -125,5 +135,39 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="test" />
     <option name="LAST_COMMIT_MESSAGE" value="test" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state x="718" y="216" width="652" height="620" key="#npm_start/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273133610" />
+    <state x="525" y="142" width="860" height="807" key="CommitChangelistDialog2" timestamp="1579273901128">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state x="525" y="142" width="860" height="807" key="CommitChangelistDialog2/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273901128" />
+    <state x="743" y="304" width="424" height="484" key="FileChooserDialogImpl" timestamp="1579273067608">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state x="743" y="304" width="424" height="484" key="FileChooserDialogImpl/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273067608" />
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1579273745513">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273745513" />
+    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1579273745512">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.center/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273745512" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1579273745512">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.left/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273745512" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1579273745512">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state width="1874" height="261" key="GridCell.Tab.0.right/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273745512" />
+    <state x="675" y="357" width="550" height="377" key="jetbrains.nodejs.interpreters-dialog" timestamp="1579273088718">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state x="675" y="357" width="550" height="377" key="jetbrains.nodejs.interpreters-dialog/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273088718" />
   </component>
 </project>
