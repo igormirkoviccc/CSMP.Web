@@ -3,6 +3,9 @@ import { Stage, Layer, Arrow} from 'react-konva';
 import CustomizeCanvasOperation from './CustomizeCanvasOperation';
 import CustomizeCanvasArrow from "./CustomizeCanvasArrow";
 
+
+
+
 class Canvas extends Component{
     constructor(props){
         super(props);
@@ -15,6 +18,8 @@ class Canvas extends Component{
         this.myRef = React.createRef();
     }
 
+
+
     renderCanvasOperations = () => {
         return this.props.currentItems.map((item,index) =>{
                 return (
@@ -24,6 +29,7 @@ class Canvas extends Component{
                         selectedOperation={this.state.selectedIndex}
                         changeSelectedOperation={this.changeSelectedOperation}
                         makeReferenceIndex={this.makeReferenceIndex}
+                        onPositionChange={this.onPositionChange}
                         item={item}
                         index={index}
                     />
@@ -31,10 +37,18 @@ class Canvas extends Component{
             })
     }
 
+    onPositionChange = (e,index)=>{
+        if(index == this.state.selectedIndex){
+            this.setState({selectedPosition: e.target.position()})
+        }
+        if(index == this.state.referencePosition){
+            this.setState({referencePosition: e.target.position()})
+        }
+    }
+
     getPositionOfOperation = (e, param) =>{
         if(param ==='referencedOperation'){
-            console.log(e.target.parent.parent.attrs)
-            this.setState({referencePosition: e.target.parent.parent.attrs}, () =>{
+            this.setState({referencePosition: e.target.getStage().getPointerPosition()}, () =>{
                 if (this.state.referenceIndex != null && this.state.selectedIndex != null) {
                     if(this.state.referenceIndex !== this.state.selectedIndex){
                         this.onAddingRelationship({'first_node': this.state.selectedIndex,'first_node_position':this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition})
@@ -42,7 +56,7 @@ class Canvas extends Component{
                 }
             })
         }else{
-            this.setState({selectedPosition: e.target.parent.parent.attrs})
+            this.setState({selectedPosition: e.target.getStage().getPointerPosition()})
         }
     }
 
@@ -52,9 +66,7 @@ class Canvas extends Component{
 
     makeReferenceIndex = (referenceIndex) =>{
             this.setState({referenceIndex});
-
     }
-
 
     onAddingRelationship = (relationship) =>{
         this.props.onAddingRelationship(relationship);
@@ -63,15 +75,12 @@ class Canvas extends Component{
     renderArrows = () =>{
         return this.props.relationShips.map((item, index) =>{
             return (
-                <CustomizeCanvasArrow
-                    item={item}
-                />
+                <CustomizeCanvasArrow node1={this.state.referencePosition} node2={this.state.selectedPosition}/>
             )
         })
     };
 
     render(){
-        console.log(this.state.referencePosition);
         return (
             <div className='canvas_context'>
                 <Stage

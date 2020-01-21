@@ -37,7 +37,6 @@ class ResizibleSideNav extends Component{
         const panel = document.getElementsByClassName("resize_side_nav_container")[0];
         panel.addEventListener("mousedown", (e) =>{
                 if (e.offsetX > this.state.width - 15) {
-                    console.log(e.offsetX)
                     this.setState({m_pos:  e.x});
                     document.addEventListener("mousemove", this.onResize, false);
                 }

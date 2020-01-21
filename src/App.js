@@ -32,7 +32,6 @@ class App extends Component {
     }
 
     render(){
-        console.log(this.state.relationShips)
      return(
          <div className="App">
              <ResizibleSideNav onClickOperation={this.onAddingOperations} onChangeWidth={this.onChangeWidth}/>

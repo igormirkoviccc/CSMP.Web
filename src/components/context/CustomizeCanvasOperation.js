@@ -14,7 +14,9 @@ class CustomizeCanvasOperation extends Component{
     constructor(props){
         super(props);
         this.state={
-            shadowBlur: 0
+            shadowBlur: 0,
+            x:100 + this.props.index * 100,
+            y:100
         }
     }
 
@@ -39,10 +41,12 @@ class CustomizeCanvasOperation extends Component{
         }
     }
 
+
     render(){
         return (
-            <Label onClick={(e) => this.actionOnOperation(e)} x={100 + this.props.index * 100}
-                   y={100}>
+            <Label onDragMove={e => {this.props.onPositionChange(e,this.props.index)}
+            } onClick={(e) => this.actionOnOperation(e, this.props.index)} x={this.state.x}
+                   y={this.state.y}>
                 <Group width={50}
                        height={50} draggable>
                     <Rect

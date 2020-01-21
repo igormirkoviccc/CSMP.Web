@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasArrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasArrow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,6 +152,16 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
