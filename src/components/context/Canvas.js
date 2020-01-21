@@ -33,7 +33,8 @@ class Canvas extends Component{
 
     getPositionOfOperation = (e, param) =>{
         if(param ==='referencedOperation'){
-            this.setState({referencePosition: e.target.getStage().getPointerPosition()}, () =>{
+            console.log(e.target.parent.parent.attrs)
+            this.setState({referencePosition: e.target.parent.parent.attrs}, () =>{
                 if (this.state.referenceIndex != null && this.state.selectedIndex != null) {
                     if(this.state.referenceIndex !== this.state.selectedIndex){
                         this.onAddingRelationship({'first_node': this.state.selectedIndex,'first_node_position':this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition})
@@ -41,7 +42,7 @@ class Canvas extends Component{
                 }
             })
         }else{
-            this.setState({selectedPosition: e.target.getStage().getPointerPosition()})
+            this.setState({selectedPosition: e.target.parent.parent.attrs})
         }
     }
 
