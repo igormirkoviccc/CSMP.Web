@@ -10,7 +10,8 @@ class App extends Component {
         super(props);
         this.state = {
             resizableWidth: 0,
-            currentItems:[]
+            currentItems:[],
+            relationShips: []
         }
     }
 
@@ -18,17 +19,24 @@ class App extends Component {
         this.setState({resizableWidth: newWidth});
     }
 
-    onClickOperation = (operation) =>{
+    onAddingRelationship = (relationship) =>{
+        this.setState(prevState => ({
+            relationShips: [...prevState.relationShips, relationship]
+        }))
+    }
+
+    onAddingOperations = (operation) =>{
         this.setState(prevState => ({
             currentItems: [...prevState.currentItems, operation]
         }))
     }
 
     render(){
+        console.log(this.state.relationShips)
      return(
          <div className="App">
-             <ResizibleSideNav onClickOperation={this.onClickOperation} onChangeWidth={this.onChangeWidth}/>
-             <Canvas currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
+             <ResizibleSideNav onClickOperation={this.onAddingOperations} onChangeWidth={this.onChangeWidth}/>
+             <Canvas relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
          </div>
      )
     }
