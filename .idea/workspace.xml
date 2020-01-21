@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,18 +54,6 @@
       <recent name="C:\Work\csmpweb\src\style" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
@@ -81,6 +68,18 @@
       <envs />
       <method v="2" />
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -101,6 +100,9 @@
       <workItem from="1579273023116" duration="46000" />
       <workItem from="1579273070379" duration="3730000" />
       <workItem from="1579552853265" duration="7350000" />
+      <workItem from="1579614855725" duration="763000" />
+      <workItem from="1579615859815" duration="4440000" />
+      <workItem from="1579620417815" duration="317000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -177,26 +179,30 @@
       <screen x="0" y="47" width="1920" height="980" />
     </state>
     <state x="743" y="304" width="424" height="484" key="FileChooserDialogImpl/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273067608" />
-    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1579274549660">
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom" timestamp="1579620300194">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579274549660" />
-    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1579274549660">
+    <state width="1874" height="261" key="GridCell.Tab.0.bottom/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579620300194" />
+    <state width="1874" height="261" key="GridCell.Tab.0.center" timestamp="1579620300193">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.center/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579274549660" />
-    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1579274549659">
+    <state width="1874" height="261" key="GridCell.Tab.0.center/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579620300193" />
+    <state width="1874" height="261" key="GridCell.Tab.0.left" timestamp="1579620300193">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.left/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579274549659" />
-    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1579274549660">
+    <state width="1874" height="261" key="GridCell.Tab.0.left/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579620300193" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right" timestamp="1579620300193">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
-    <state width="1874" height="261" key="GridCell.Tab.0.right/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579274549660" />
+    <state width="1874" height="261" key="GridCell.Tab.0.right/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579620300193" />
     <state x="555" y="282" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1579276628472">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
     <state x="555" y="282" width="800" height="528" key="Vcs.Push.Dialog.v2/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579276628472" />
+    <state x="616" y="373" key="com.intellij.ide.util.TipDialog" timestamp="1579620439207">
+      <screen x="0" y="47" width="1920" height="980" />
+    </state>
+    <state x="616" y="373" key="com.intellij.ide.util.TipDialog/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579620439207" />
     <state x="675" y="357" width="550" height="377" key="jetbrains.nodejs.interpreters-dialog" timestamp="1579273088718">
       <screen x="0" y="47" width="1920" height="980" />
     </state>

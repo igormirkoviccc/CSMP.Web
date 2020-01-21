@@ -34,26 +34,41 @@ class CustomizeCanvasOperation extends Component{
     }
 
 
-    actionOnOperation = () =>{
-        this.setState({shadowBlur: 5})
+    actionOnOperation = (e) =>{
+        if(this.props.selectedOperation == null){
+            this.props.getPositionOfOperation(e,'selectedOperation');
+            this.props.changeSelectedOperation(this.props.index);
+            return;
+        }
+        this.props.makeReferenceIndex(this.props.index);
+        this.props.getPositionOfOperation(e,'referencedOperation');
     }
 
+    fillOperation = () =>{
+        if(this.props.selectedOperation === this.props.index || this.props.selectedOperation == null){
+            return '#86CFCA';
+        }else if(this.props.referenceIndex === this.props.index){
+            return '#AAADC4';
+        }else{
+            return '#AFCBFF';
+        }
+    }
 
     render(){
         return (
-            <Label onClick={this.actionOnOperation} x={100 + this.props.index * 100}
+            <Label onClick={(e) => this.actionOnOperation(e)} x={100 + this.props.index * 100}
                    y={100}>
                 <Group width={50}
                        height={50} draggable>
                     <Rect
                         width={50}
                         height={50}
-                        fill={'#86cfca'}
+                        fill={this.fillOperation()}
                         cornerRadius={7}
                         className='operation_container'
                         ref={this.props.myRef}
                         data={this.props.item}
-                        shadowBlur={this.state.shadowBlur}
+                        shadowBlur={this.props.selectedOperation == this.props.index ? 10 : 0}
                     />
                     <Text fill={'#215263'} fontFamily={'Roboto'} fontSize={15} height={50} width={50} align="center"
                           verticalAlign="middle" text={this.props.item.label}/>

@@ -10,17 +10,13 @@ class Drawable {
 }
 
 class ArrowDrawable extends Drawable {
-    constructor(startx, starty) {
+    constructor(startx, starty, endx, endy) {
         super(startx, starty);
         this.x = startx;
         this.y = starty;
     }
-    registerMovement(x, y) {
-        this.x = x;
-        this.y = y;
-    }
     render() {
-        const points = [this.startx, this.starty, this.x, this.y];
+        const points = [this.startx, this.starty, this.endx, this.endy];
         return <Arrow points={points} fill="black" stroke="black" />;
     }
 }
@@ -29,15 +25,18 @@ class Canvas extends Component{
     constructor(props){
         super(props);
         this.state = {
-            drawables: [],
-            newDrawable: []
+            relationShips: [],
+            selectedIndex: null,
+            referenceIndex: null,
+            selectedPosition: null,
+            referencePosition: null
         }
         this.myRef = React.createRef();
     }
 
     handleMouseDown = e => {
         const { newDrawable } = this.state;
-        if (newDrawable.length === 0) {
+        if (newDrawable.length === 0 && this.state.selectedIndex != null && this.state.referenceIndex != null) {
             const { x, y } = e.target.getStage().getPointerPosition();
             const newDrawable = new ArrowDrawable(x,y);
             this.setState({
@@ -83,9 +82,46 @@ class Canvas extends Component{
     renderCanvasOperations = () => {
         return this.props.currentItems.map((item,index) =>{
                 return (
-                    <CustomizeCanvasOperation item={item} index={index}/>
+                    <CustomizeCanvasOperation
+                        referenceIndex={this.state.referenceIndex}
+                        getPositionOfOperation={this.getPositionOfOperation}
+                        selectedOperation={this.state.selectedIndex}
+                        changeSelectedOperation={this.changeSelectedOperation}
+                        makeReferenceIndex={this.makeReferenceIndex}
+                        item={item}
+                        index={index}/>
                 )
             })
+    }
+
+    getPositionOfOperation = (e, param) =>{
+        if(param =='referencedOperation'){
+            this.setState({referencePosition: e.target.getStage().getPointerPosition()})
+        }else{
+            this.setState({selectedPosition: e.target.getStage().getPointerPosition()})
+        }
+    }
+
+    changeSelectedOperation = (selectedIndex) =>{
+        this.setState({selectedIndex})
+    }
+
+    makeReferenceIndex = (referenceIndex) =>{
+            this.setState({referenceIndex});
+    }
+
+    makeArrow = () => {
+        if (this.state.selectedPosition != null && this.state.referencePosition != null) {
+            const newDrawable = new ArrowDrawable(this.state.selectedPosition.x, this.state.selectedPosition.y, this.state.referencePosition.x, this.state.referencePosition.y);
+            this.setState({
+                newDrawable: [newDrawable],
+                selectedPosition: null,
+                referencePosition: null
+            }, () => {
+                console.log('im here')
+                this.renderCanvasArrows();
+            });
+        }
     }
 
     render(){
@@ -94,13 +130,9 @@ class Canvas extends Component{
                 <Stage
                     width={window.innerWidth - this.props.resizableWidth - 100}
                     height={window.innerHeight}
-                    onMouseDown={this.handleMouseDown}
-                    onMouseUp={this.handleMouseUp}
-                    onMouseMove={this.handleMouseMove}
                 >
                     <Layer>
                         {this.renderCanvasOperations()}
-                        {this.renderCanvasArrows()}
                     </Layer>
                 </Stage>
             </div>
