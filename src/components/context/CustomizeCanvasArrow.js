@@ -7,9 +7,6 @@ const CustomizeCanvasArrow =({node1, node2}) =>{
     let angle = Math.atan2(-dy, dx);
     const radius = 0;
 
-    console.log(node1);
-    console.log(node2);
-
     const arrowStart = {
         x: node2.x + -radius * Math.cos(angle + Math.PI),
         y: node2.y + radius * Math.sin(angle + Math.PI)

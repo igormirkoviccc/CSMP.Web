@@ -45,7 +45,7 @@ class CustomizeCanvasOperation extends Component{
     render(){
         return (
             <Label onDragMove={e => {this.props.onPositionChange(e,this.props.index)}
-            } onClick={(e) => this.actionOnOperation(e, this.props.index)} x={this.state.x}
+            } onDblClick={(e) => this.actionOnOperation(e, this.props.index)}  x={this.state.x}
                    y={this.state.y}>
                 <Group width={50}
                        height={50} draggable>

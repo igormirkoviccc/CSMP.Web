@@ -15,6 +15,8 @@ class App extends Component {
         }
     }
 
+
+
     onChangeWidth = (newWidth) =>{
         this.setState({resizableWidth: newWidth});
     }
@@ -23,6 +25,10 @@ class App extends Component {
         this.setState(prevState => ({
             relationShips: [...prevState.relationShips, relationship]
         }))
+    }
+
+    updateRelationships = (relationships) =>{
+        this.setState({relationShips: relationships})
     }
 
     onAddingOperations = (operation) =>{
@@ -35,7 +41,7 @@ class App extends Component {
      return(
          <div className="App">
              <ResizibleSideNav onClickOperation={this.onAddingOperations} onChangeWidth={this.onChangeWidth}/>
-             <Canvas relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
+             <Canvas updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
          </div>
      )
     }
