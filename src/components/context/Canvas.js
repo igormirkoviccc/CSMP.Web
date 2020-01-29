@@ -38,7 +38,7 @@ class Canvas extends Component{
     }
 
     onPositionChange = (e,index)=>{
-        console.log(e.evt.x);
+        console.log(e);
         let obj = {
             x: e.evt.x - 300,
             y: e.evt.y
@@ -46,8 +46,8 @@ class Canvas extends Component{
         if(index == this.state.selectedIndex){
             this.setState({selectedPosition: obj})
         }
-        if(index == this.state.referencePosition){
-            this.setState({referencePosition: e.target.position()})
+        if(index == this.state.referenceIndex){
+            this.setState({referencePosition: obj})
         }
     }
 
