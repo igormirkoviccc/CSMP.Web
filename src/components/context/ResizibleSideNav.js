@@ -33,19 +33,19 @@ class ResizibleSideNav extends Component{
         })
     };
 
-    componentDidMount() {
-        const panel = document.getElementsByClassName("resize_side_nav_container")[0];
-        panel.addEventListener("mousedown", (e) =>{
-                if (e.offsetX > this.state.width - 15) {
-                    this.setState({m_pos:  e.x});
-                    document.addEventListener("mousemove", this.onResize, false);
-                }
-        }, false);
-
-        document.addEventListener("mouseup", ()=>{
-            document.removeEventListener("mousemove", this.onResize, false);
-        }, false);
-    }
+    // componentDidMount() {
+    //     const panel = document.getElementsByClassName("resize_side_nav_container")[0];
+    //     panel.addEventListener("mousedown", (e) =>{
+    //             if (e.offsetX > this.state.width - 15) {
+    //                 this.setState({m_pos:  e.x});
+    //                 document.addEventListener("mousemove", this.onResize, false);
+    //             }
+    //     }, false);
+    //
+    //     document.addEventListener("mouseup", ()=>{
+    //         document.removeEventListener("mousemove", this.onResize, false);
+    //     }, false);
+    // }
 
 
     render(){

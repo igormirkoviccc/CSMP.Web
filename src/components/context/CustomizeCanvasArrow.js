@@ -5,7 +5,6 @@ const CustomizeCanvasArrow =({node1, node2}) =>{
     const dx = node1.x - node2.x;
     const dy = node1.y - node2.y;
     let angle = Math.atan2(-dy, dx);
-
     const radius = 0;
 
     const arrowStart = {
@@ -17,8 +16,6 @@ const CustomizeCanvasArrow =({node1, node2}) =>{
         x: node1.x + -radius * Math.cos(angle),
         y: node1.y + radius * Math.sin(angle)
     };
-
-
 
         return (
           <Arrow fill="black" stroke="black" strokeWidth={1}

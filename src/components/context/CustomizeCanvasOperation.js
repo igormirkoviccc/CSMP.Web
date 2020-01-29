@@ -22,6 +22,7 @@ class CustomizeCanvasOperation extends Component{
 
 
     actionOnOperation = (e) =>{
+        console.log(e);
         if(this.props.selectedOperation == null){
             this.props.getPositionOfOperation(e,'selectedOperation');
             this.props.changeSelectedOperation(this.props.index);
