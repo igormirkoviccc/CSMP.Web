@@ -46,7 +46,7 @@ class Canvas extends Component{
         relationShips.forEach((part, count) => {
             if(part['first_node'] === index){
                 part['first_node_position'] = obj;
-            }else if(part['second_node'] == index){
+            }else if(part['second_node'] === index){
                 part['second_node_position'] = obj;
             }
         });
@@ -76,7 +76,7 @@ class Canvas extends Component{
                 if (this.state.referenceIndex != null && this.state.selectedIndex != null) {
                     if(this.state.referenceIndex !== this.state.selectedIndex){
                         this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition})
-                        this.setState({selectedOperation: null, referencedOperation: null})
+                        this.setState({selectedOperation: null, referencedOperation: null, selectedIndex: null, referenceIndex: null})
                     }
                 }
             })

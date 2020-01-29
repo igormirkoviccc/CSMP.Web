@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +101,7 @@
       <workItem from="1579273070379" duration="3730000" />
       <workItem from="1579552853265" duration="7350000" />
       <workItem from="1580154541110" duration="7000" />
-      <workItem from="1580327612294" duration="5128000" />
+      <workItem from="1580327612294" duration="5625000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -175,7 +173,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580332204413</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="made arrows on multiple elements :D">
+      <created>1580333022646</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1580333022646</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,7 +220,8 @@
     <MESSAGE value="made arrow linked :)))))" />
     <MESSAGE value="made arrow linked 2 :)))))" />
     <MESSAGE value="made arrow linked 3 :)))))" />
-    <option name="LAST_COMMIT_MESSAGE" value="made arrow linked 3 :)))))" />
+    <MESSAGE value="made arrows on multiple elements :D" />
+    <option name="LAST_COMMIT_MESSAGE" value="made arrows on multiple elements :D" />
   </component>
   <component name="WindowStateProjectService">
     <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">
