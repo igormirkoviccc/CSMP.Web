@@ -46,29 +46,29 @@ class Canvas extends Component{
         relationShips.forEach((part, count) => {
             if(part['first_node'] === index){
                 part['first_node_position'] = obj;
-            }else if(part['second_node']){
+            }else if(part['second_node'] == index){
                 part['second_node_position'] = obj;
             }
         });
-
+        console.log(this.props.relationShips);
         this.props.updateRelationships(relationShips)
-    }
+    };
 
     onPositionChange = (e,index)=>{
         let obj = {
             x: e.evt.x - 300,
             y: e.evt.y
-        }
+        };
 
         this.changeRelationshipsPosition(e,index);
 
-        if(index == this.state.selectedIndex){
+        if(index === this.state.selectedIndex){
             this.setState({selectedPosition: obj})
         }
-        if(index == this.state.referenceIndex){
+        if(index === this.state.referenceIndex){
             this.setState({referencePosition: obj})
         }
-    }
+    };
 
     getPositionOfOperation = (e, param) =>{
         if(param ==='referencedOperation'){
@@ -83,23 +83,22 @@ class Canvas extends Component{
         }else{
             this.setState({selectedPosition: e.target.getStage().getPointerPosition()})
         }
-    }
+    };
 
     changeSelectedOperation = (selectedIndex) =>{
         this.setState({selectedIndex})
-    }
+    };
 
     makeReferenceIndex = (referenceIndex) =>{
             this.setState({referenceIndex});
-    }
+    };
 
     onAddingRelationship = (relationship) =>{
         this.props.onAddingRelationship(relationship);
-    }
+    };
 
     renderArrows = () =>{
         return this.props.relationShips.map((item, index) =>{
-            console.log(item);
             return (
                 <CustomizeCanvasArrow node1={item.second_node_position} node2={item.first_node_position}/>
             )

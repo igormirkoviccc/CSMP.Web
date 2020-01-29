@@ -15,8 +15,6 @@ class App extends Component {
         }
     }
 
-
-
     onChangeWidth = (newWidth) =>{
         this.setState({resizableWidth: newWidth});
     }

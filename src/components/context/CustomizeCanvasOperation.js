@@ -1,13 +1,5 @@
 import React, {Component} from "react";
-import {Rect, Group, Text, Label, Arrow} from 'react-konva';
-
-class Drawable {
-    constructor(startx, starty) {
-        this.startx = startx;
-        this.starty = starty;
-    }
-}
-
+import {Rect, Group, Text, Label} from 'react-konva';
 
 
 class CustomizeCanvasOperation extends Component{
@@ -20,7 +12,6 @@ class CustomizeCanvasOperation extends Component{
         }
     }
 
-
     actionOnOperation = (e) =>{
         if(this.props.selectedOperation == null){
             this.props.getPositionOfOperation(e,'selectedOperation');
@@ -29,7 +20,7 @@ class CustomizeCanvasOperation extends Component{
         }
         this.props.makeReferenceIndex(this.props.index);
         this.props.getPositionOfOperation(e,'referencedOperation');
-    }
+    };
 
     fillOperation = () =>{
         if(this.props.selectedOperation === this.props.index || this.props.selectedOperation == null){
@@ -39,7 +30,7 @@ class CustomizeCanvasOperation extends Component{
         }else{
             return '#AFCBFF';
         }
-    }
+    };
 
 
     render(){
@@ -57,7 +48,7 @@ class CustomizeCanvasOperation extends Component{
                         className='operation_container'
                         ref={this.props.myRef}
                         data={this.props.item}
-                        shadowBlur={this.props.selectedOperation == this.props.index ? 10 : 0}
+                        shadowBlur={this.props.selectedOperation === this.props.index ? 10 : 0}
                     />
                     <Text fill={'#215263'} fontFamily={'Roboto'} fontSize={15} height={50} width={50} align="center"
                           verticalAlign="middle" text={this.props.item.label}/>
