@@ -6,6 +6,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import TextfieldCSMP from "../controllers/TextfieldCSMP";
 import ButtonCSMP from "../controllers/ButtonCSMP";
+import SideBarInfoOperation from "./SideBarInfoOperation";
 
 const useStyles = makeStyles(theme => ({
     modal: {
@@ -59,7 +60,7 @@ export default class ParametarsModal extends Component{
 
     renderTextfields = () =>{
         return this.props.item.parametrs.map((item, index) =>{
-            return <TextfieldCSMP updateTextFieldValues={this.updateTextFieldValues} textFieldValue={this.getTextFieldValues(index)} item={item} index={index}/>
+            return <TextfieldCSMP  key={'_' +index} updateTextFieldValues={this.updateTextFieldValues} textFieldValue={this.getTextFieldValues(index)} item={item} index={index}/>
         })
     }
 

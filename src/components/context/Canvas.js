@@ -3,6 +3,7 @@ import { Stage, Layer, Arrow} from 'react-konva';
 import CustomizeCanvasOperation from './CustomizeCanvasOperation';
 import CustomizeCanvasArrow from "./CustomizeCanvasArrow";
 import ParametarsModal from "./ParametarsModal";
+import SideBarInfoOperation from "./SideBarInfoOperation";
 
 
 
@@ -25,6 +26,7 @@ class Canvas extends Component{
         return this.props.currentItems.map((item,index) =>{
                 return (
                     <CustomizeCanvasOperation
+                        key={'_' +index}
                         referenceIndex={this.state.referenceIndex}
                         getPositionOfOperation={this.getPositionOfOperation}
                         selectedOperation={this.state.selectedIndex}
@@ -101,7 +103,7 @@ class Canvas extends Component{
     renderArrows = () =>{
         return this.props.relationShips.map((item, index) =>{
             return (
-                <CustomizeCanvasArrow node1={item.second_node_position} node2={item.first_node_position}/>
+                <CustomizeCanvasArrow key={'_' +index} node1={item.second_node_position} node2={item.first_node_position}/>
             )
         })
     };
