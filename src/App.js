@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import './style/test.scss'
 import ResizibleSideNav from "./components/context/ResizibleSideNav";
 import Canvas from "./components/context/Canvas";
+import SideBarInfo from "./components/context/SideBarInfo";
 
 
 
@@ -40,6 +41,7 @@ class App extends Component {
          <div className="App">
              <ResizibleSideNav onClickOperation={this.onAddingOperations} onChangeWidth={this.onChangeWidth}/>
              <Canvas updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
+             <SideBarInfo currentItems={this.state.currentItems}/>
          </div>
      )
     }

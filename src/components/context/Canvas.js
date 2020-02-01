@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import { Stage, Layer, Arrow} from 'react-konva';
 import CustomizeCanvasOperation from './CustomizeCanvasOperation';
 import CustomizeCanvasArrow from "./CustomizeCanvasArrow";
+import ParametarsModal from "./ParametarsModal";
 
 
 
@@ -50,7 +51,6 @@ class Canvas extends Component{
                 part['second_node_position'] = obj;
             }
         });
-        console.log(this.props.relationShips);
         this.props.updateRelationships(relationShips)
     };
 
@@ -70,6 +70,10 @@ class Canvas extends Component{
         }
     };
 
+    renderModal = () =>{
+        console.log('im here');
+    }
+
     getPositionOfOperation = (e, param) =>{
         if(param ==='referencedOperation'){
             this.setState({referencePosition: e.target.getStage().getPointerPosition()}, () =>{
@@ -84,6 +88,8 @@ class Canvas extends Component{
             this.setState({selectedPosition: e.target.getStage().getPointerPosition()})
         }
     };
+
+
 
     changeSelectedOperation = (selectedIndex) =>{
         this.setState({selectedIndex})
@@ -106,6 +112,9 @@ class Canvas extends Component{
     };
 
     render(){
+        if( this.state.selectedIndex != null && this.state.referenceIndex !== this.state.selectedIndex){
+            this.renderModal();
+        }
         return (
             <div className='canvas_context'>
                 <Stage
