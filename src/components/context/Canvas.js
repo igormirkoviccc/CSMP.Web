@@ -36,13 +36,13 @@ class Canvas extends Component{
                     />
                 )
             })
-    }
+    };
 
     changeRelationshipsPosition = (e,index)=>{
         let obj = {
             x: e.evt.x - 300,
             y: e.evt.y
-        }
+        };
         let relationShips = this.props.relationShips.slice();
         relationShips.forEach((part, count) => {
             if(part['first_node'] === index){
@@ -70,9 +70,6 @@ class Canvas extends Component{
         }
     };
 
-    renderModal = () =>{
-        console.log('im here');
-    }
 
     getPositionOfOperation = (e, param) =>{
         if(param ==='referencedOperation'){
@@ -88,8 +85,6 @@ class Canvas extends Component{
             this.setState({selectedPosition: e.target.getStage().getPointerPosition()})
         }
     };
-
-
 
     changeSelectedOperation = (selectedIndex) =>{
         this.setState({selectedIndex})
@@ -112,11 +107,9 @@ class Canvas extends Component{
     };
 
     render(){
-        if( this.state.selectedIndex != null && this.state.referenceIndex !== this.state.selectedIndex){
-            this.renderModal();
-        }
         return (
             <div className='canvas_context'>
+                {this.props.modalOpen ? <ParametarsModal modalOpen={this.props.modalOpen} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
                     width={window.innerWidth - this.props.resizableWidth - 100}
                     height={window.innerHeight}

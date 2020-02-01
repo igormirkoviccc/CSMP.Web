@@ -24,6 +24,7 @@ class ResizibleSideNav extends Component{
     }
 
     addToArray = (item) =>{
+        console.log(item);
         this.props.onClickOperation(item);
     }
 
@@ -46,9 +47,6 @@ class ResizibleSideNav extends Component{
     //         document.removeEventListener("mousemove", this.onResize, false);
     //     }, false);
     // }
-
-
-
 
     render(){
 

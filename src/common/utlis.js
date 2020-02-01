@@ -1,127 +1,152 @@
 
-global.Data = {
-    igor: 'test'
-}
-
 global.onStart = function initialize(){
     global._data = [
         {
             name: 'ArcTan',
-            label: 'A'
+            label: 'A',
+            parametrs : ['Parametar 1, Parametar 2, Parametar 3']
         },
         {
             name: 'Sign',
             label: 'B',
+            parametrs : []
         },
         {
             name: 'Cos',
-            label: 'C'
+            label: 'C',
+            parametrs : ['Parametar 1, Parametar 2, Parametar 3']
         },
         {
             name: 'Mrtva zona',
-            label: 'D'
+            label: 'D',
+            parametrs : ['Donja granica, Gornja granica']
         },
         {
             name: 'Exp',
-            label: 'E'
+            label: 'E',
+            parametrs : ['Parametar 1, Parametar 2, Parametar 3']
         },
         {
             name: 'Generator funkcija',
-            label: 'F'
+            label: 'F',
+            parametrs : ['Parametar 1, Parametar 2']
         },
         {
             name: 'Pojacanje',
-            label: 'G'
+            label: 'G',
+            parametrs : ['Parametar 1']
         },
         {
             name: 'Kvadratni koren',
-            label: 'H'
+            label: 'H',
+            parametrs : []
         },
         {
             name: 'Integrator',
-            label: 'I'
+            label: 'I',
+            parametrs : ['Parametar 1, Parametar 2, Parametar 3']
         },
         {
             name: 'Generator slucajnih brojeva',
-            label: 'J'
+            label: 'J',
+            parametrs : []
         },
         {
             name: 'Konstanta',
-            label: 'K'
+            label: 'K',
+            parametrs : ['Konstanta']
         },
         {
             name: 'Ogranicavac',
-            label: 'L'
+            label: 'L',
+            parametrs : ['Donja granica, Gornja granica']
         },
         {
             name: 'Apsolutna vrednost',
-            label: 'M'
+            label: 'M',
+            parametrs : []
         },
         {
             name: 'Negativni ogranicavac',
-            label: 'N'
+            label: 'N',
+            parametrs : []
         },
         {
             name: 'Offset',
-            label: 'O'
+            label: 'O',
+            parametrs : ['Pomeraj']
         },
         {
             name: 'Pozitivni ogranicavac',
-            label: 'P'
+            label: 'P',
+            parametrs : []
         },
         {
             name: 'Quit',
-            label: 'Q'
+            label: 'Q',
+            parametrs : []
         },
         {
             name: 'Relej',
-            label: 'R'
+            label: 'R',
+            parametrs : []
         },
         {
             name: 'Sin',
-            label: 'S'
+            label: 'S',
+            parametrs : ['Parametar 1, Parametar 2, Parametar 3']
         },
         {
             name: 'Generator impulsa',
-            label: 'T'
+            label: 'T',
+            parametrs : ['Parametar 1']
         },
         {
             name: 'Jedinicno kasnjenje',
-            label: 'U'
+            label: 'U',
+            parametrs : []
         },
         {
             name: 'Vacuous',
-            label: 'V'
+            label: 'V',
+            parametrs : ['Parametar 1']
         },
         {
             name: 'Sabirac',
-            label: 'W'
+            label: 'W',
+            parametrs : ['Parametar 1, Parametar 2, Parametar 3']
         },
         {
             name: 'Mnozac',
-            label: 'X'
+            label: 'X',
+            parametrs : []
         },
         {
             name: 'Wye',
-            label: ''
+            label: 'Wye',
+            parametrs : ['Parametar 1']
         },
         {
             name: 'Kolo zadrske',
-            label: 'Z'
+            label: 'Z',
+            parametrs : []
         },
         {
             name: 'Delitelj',
-            label: '/'
+            label: '/',
+            parametrs : []
         },
         {
             name: 'Invertor',
-            label: '-'
+            label: '-',
+            parametrs : []
         },
         {
             name: 'Vreme',
-            label: 't'
+            label: 't',
+            parametrs : []
         },
     ]
-}
+};
 
 

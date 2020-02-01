@@ -8,7 +8,7 @@ function SideBarInfoOperation(props){
 
     return (
         <div className='sidebarinfo_operation'>
-            {props.item.name}
+            {props.index + 1}. {props.item.name}
         </div>
     );
 }

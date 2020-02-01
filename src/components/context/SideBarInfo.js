@@ -12,8 +12,8 @@ class SideBarInfo extends Component{
     }
 
     renderSideInfoOperations = () =>{
-        return this.props.currentItems.map((item) =>{
-            return <SideBarInfoOperation item={item}/>
+        return this.props.currentItems.map((item, index) =>{
+            return <SideBarInfoOperation index={index} item={item}/>
         })
     };
 
