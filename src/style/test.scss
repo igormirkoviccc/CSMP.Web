@@ -79,8 +79,10 @@ html, body, .App, #root {
 .canvas_context {
   width: auto;
   display: inline-block;
-  background-color: rgba(0,0,0,0.1);
+  background-image: url("../assets/img/canvasbackground.png");
+  background-position: right;
   overflow: hidden;
+
 
 
   .konvasjs-content {

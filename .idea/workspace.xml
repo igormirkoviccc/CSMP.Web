@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/controllers/TooltipCSMP.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasArrow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasArrow.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/test.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,6 +53,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Work\csmp-web\src\assets" />
       <recent name="C:\Work\csmpweb\src\components\context" />
       <recent name="C:\Work\csmpweb\src\style" />
     </key>
@@ -103,7 +106,7 @@
       <workItem from="1579552853265" duration="7350000" />
       <workItem from="1580154541110" duration="7000" />
       <workItem from="1580327612294" duration="10933000" />
-      <workItem from="1580562283036" duration="16753000" />
+      <workItem from="1580562283036" duration="21734000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -210,7 +213,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580584035769</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="adding data maxInputs">
+      <created>1580585907151</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1580585907151</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +265,8 @@
     <MESSAGE value="make side sidebar info" />
     <MESSAGE value="making parameters modal and parametars stick to data" />
     <MESSAGE value="update no console errors ." />
-    <option name="LAST_COMMIT_MESSAGE" value="update no console errors ." />
+    <MESSAGE value="adding data maxInputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="adding data maxInputs" />
   </component>
   <component name="WindowStateProjectService">
     <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">

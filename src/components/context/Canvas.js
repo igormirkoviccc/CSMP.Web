@@ -108,6 +108,8 @@ class Canvas extends Component{
         })
     };
 
+
+
     render(){
         return (
             <div className='canvas_context'>

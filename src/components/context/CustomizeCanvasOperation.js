@@ -33,13 +33,32 @@ class CustomizeCanvasOperation extends Component{
     };
 
 
+
+
     render(){
         return (
-            <Label onDragMove={e => {this.props.onPositionChange(e,this.props.index)}
-            } onDblClick={(e) => this.actionOnOperation(e, this.props.index)}  x={this.state.x}
-                   y={this.state.y}>
+            <Label
+                onDragMove={e => {this.props.onPositionChange(e,this.props.index)}}
+                onDblClick={(e) => this.actionOnOperation(e, this.props.index)}
+                x={this.state.x}
+                y={this.state.y}
+                onMouseEnter={() => {
+                    document.body.style.cursor = "pointer";
+                }}
+                onMouseLeave={() => {
+                    document.body.style.cursor = "default";
+                }}
+
+            >
                 <Group width={50}
-                       height={50} draggable>
+                       height={50}
+                       draggable
+                       // dragBoundFunc={(pos) =>{
+                       //     console.log(pos)
+                       //     return pos
+                       // }}
+
+                >
                     <Rect
                         width={50}
                         height={50}
@@ -48,9 +67,16 @@ class CustomizeCanvasOperation extends Component{
                         className='operation_container'
                         ref={this.props.myRef}
                         data={this.props.item}
-                        shadowBlur={this.props.selectedOperation === this.props.index ? 10 : 0}
+                        strokeWidth={this.props.selectedOperation === this.props.index ? 1 : 0}
+                        shadowForStrokeEnabled={true}
+                        stroke="black"
                     />
-                    <Text fill={'#215263'} fontFamily={'Roboto'} fontSize={15} height={50} width={50} align="center"
+                    <Text fill={'#215263'}
+                          fontFamily={'Roboto'}
+                          fontSize={15}
+                          height={50}
+                          width={50}
+                          align="center"
                           verticalAlign="middle" text={this.props.item.label}/>
                 </Group>
             </Label>
