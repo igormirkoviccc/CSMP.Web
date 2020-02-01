@@ -18,7 +18,7 @@ const CustomizeCanvasArrow =({node1, node2}) =>{
     };
 
         return (
-          <Arrow dashEnabled={true} fill="black" stroke="black" strokeWidth={1}
+          <Arrow  fill="black" stroke="black" strokeWidth={1}
                  pointerWidth={6} points={[arrowStart.x,
               arrowStart.y,
               arrowEnd.x,

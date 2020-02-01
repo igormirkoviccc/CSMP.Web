@@ -7,147 +7,177 @@ global._data = [
     {
         name: 'ArcTan',
         label: 'A',
-        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3']
+        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
+        maxInputs: 1
     },
     {
         name: 'Sign',
         label: 'B',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1,
     },
     {
         name: 'Cos',
         label: 'C',
-        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3']
+        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
+        maxInputs: 1,
     },
     {
         name: 'Mrtva zona',
         label: 'D',
-        parametrs : ['Donja granica', 'Gornja granica']
+        parametrs : ['Donja granica', 'Gornja granica'],
+        maxInputs: 1,
     },
     {
         name: 'Exp',
         label: 'E',
-        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3']
+        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
+        maxInputs: 1,
     },
     {
         name: 'Generator funkcija',
         label: 'F',
-        parametrs : ['Parametar 1', 'Parametar 2']
+        parametrs : ['Parametar 1', 'Parametar 2'],
+        maxInputs: 1,
     },
     {
         name: 'Pojacanje',
         label: 'G',
-        parametrs : ['Parametar 1']
+        parametrs : ['Parametar 1'],
+        maxInputs: 1,
     },
     {
         name: 'Kvadratni koren',
         label: 'H',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1
     },
     {
         name: 'Integrator',
         label: 'I',
-        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3']
+        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
+        maxInputs: 3
     },
     {
         name: 'Generator slucajnih brojeva',
         label: 'J',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 0
     },
     {
         name: 'Konstanta',
         label: 'K',
-        parametrs : ['Konstanta']
+        parametrs : ['Konstanta'],
+        maxInputs: 0
     },
     {
         name: 'Ogranicavac',
         label: 'L',
-        parametrs : ['Donja granica', 'Gornja granica']
+        parametrs : ['Donja granica', 'Gornja granica'],
+        maxInputs: 1
     },
     {
         name: 'Apsolutna vrednost',
         label: 'M',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1
     },
     {
         name: 'Negativni ogranicavac',
         label: 'N',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1
     },
     {
         name: 'Offset',
         label: 'O',
-        parametrs : ['Pomeraj']
+        parametrs : ['Pomeraj'],
+        maxInputs: 1
     },
     {
         name: 'Pozitivni ogranicavac',
         label: 'P',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1
     },
     {
         name: 'Quit',
         label: 'Q',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 2
     },
     {
         name: 'Relej',
         label: 'R',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 3
     },
     {
         name: 'Sin',
         label: 'S',
-        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3']
+        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
+        maxInputs: 1
+
     },
     {
         name: 'Generator impulsa',
         label: 'T',
-        parametrs : ['Parametar 1']
+        parametrs : ['Parametar 1'],
+        maxInputs: 1
     },
     {
         name: 'Jedinicno kasnjenje',
         label: 'U',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1
     },
     {
         name: 'Vacuous',
         label: 'V',
-        parametrs : ['Parametar 1']
+        parametrs : ['Parametar 1'],
+        maxInputs: 0
     },
     {
         name: 'Sabirac',
         label: 'W',
-        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3']
+        parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
+        maxInputs: 3
     },
     {
         name: 'Mnozac',
         label: 'X',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 2
     },
     {
         name: 'Wye',
         label: 'Wye',
-        parametrs : ['Parametar 1']
+        parametrs : ['Parametar 1'],
+        maxInputs: 2
     },
     {
         name: 'Kolo zadrske',
         label: 'Z',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 2
     },
     {
         name: 'Delitelj',
         label: '/',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 2
     },
     {
         name: 'Invertor',
         label: '-',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 1
     },
     {
         name: 'Vreme',
         label: 't',
-        parametrs : []
+        parametrs : [],
+        maxInputs: 2
     },
 ]
 
