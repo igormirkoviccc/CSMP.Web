@@ -137,9 +137,6 @@ class Canvas extends Component{
 
 
     render(){
-        console.log(this.state.selectedItem);
-        console.log(this.state.selectedPosition);
-        console.log(this.state.selectedIndex);
         return (
             <div className='canvas_context'>
                 {this.props.modalOpen ? <ParametarsModal modalOpen={this.props.modalOpen} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }

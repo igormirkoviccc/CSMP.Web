@@ -41,6 +41,8 @@ export default class ParametarsModal extends Component{
                 return this.state.textFieldSecondValue;
             case 2:
                 return this.state.textFieldThirdValue;
+            default:
+                break;
         }
     };
 
@@ -55,19 +57,21 @@ export default class ParametarsModal extends Component{
             case 2:
                 this.setState({textFieldThirdValue: change});
                 break;
+            default:
+                break;
         }
-    }
+    };
 
     renderTextfields = () =>{
         return this.props.item.parametrs.map((item, index) =>{
             return <TextfieldCSMP  key={'_' +index} updateTextFieldValues={this.updateTextFieldValues} textFieldValue={this.getTextFieldValues(index)} item={item} index={index}/>
         })
-    }
+    };
 
     saveInputs = () =>{
         let addingItem = {
             ...this.props.item,
-        }
+        };
         this.props.item.parametrs.map((item, index) =>{
             switch (index) {
                 case 0:
@@ -76,6 +80,8 @@ export default class ParametarsModal extends Component{
                     return addingItem[item] = parseInt(this.state.textFieldSecondValue);
                 case 2:
                     return addingItem[item] = parseInt(this.state.textFieldThirdValue);
+                default:
+                    break;
             }
         });
         this.props.onAddingOperation(addingItem)

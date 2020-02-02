@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Rect, Group, Text, Label} from 'react-konva';
+import {Rect, Group, Text, Label, Image} from 'react-konva';
 
 
 class CustomizeCanvasOperation extends Component{
@@ -8,7 +8,8 @@ class CustomizeCanvasOperation extends Component{
         this.state={
             shadowBlur: 0,
             x:100 + this.props.index * 100,
-            y:100
+            y:100,
+            image: null
         }
     }
 
@@ -33,6 +34,22 @@ class CustomizeCanvasOperation extends Component{
     };
 
 
+    componentDidMount() {
+        this.updateImage();
+    }
+
+
+    updateImage() {
+        const image = new window.Image();
+        image.src = '../operations/'+this.props.item.img +'.png';
+        image.onload = () => {
+            this.setState({
+                image: image
+            });
+        };
+    }
+
+
 
 
     render(){
@@ -50,18 +67,20 @@ class CustomizeCanvasOperation extends Component{
                 }}
 
             >
-                <Group width={50}
-                       height={50}
+                <Group width={51}
+                       height={51}
                        draggable
-                       // dragBoundFunc={(pos) =>{
+
+                    // dragBoundFunc={(pos) =>{
                        //     console.log(pos)
                        //     return pos
                        // }}
 
                 >
                     <Rect
-                        width={50}
-                        height={50}
+                        fillPatternImage={('../operations/'+this.props.item.img +'.png')}
+                        width={51}
+                        height={51}
                         fill={this.fillOperation()}
                         cornerRadius={7}
                         className='operation_container'
@@ -71,13 +90,9 @@ class CustomizeCanvasOperation extends Component{
                         shadowForStrokeEnabled={true}
                         stroke="black"
                     />
-                    <Text fill={'#215263'}
-                          fontFamily={'Roboto'}
-                          fontSize={15}
-                          height={50}
-                          width={50}
-                          align="center"
-                          verticalAlign="middle" text={this.props.item.label}/>
+                    <Group offsetX={-5} offsetY={-5}>
+                    <Image image={this.state.image} space="fill"/>
+                    </Group>
                 </Group>
             </Label>
         )
