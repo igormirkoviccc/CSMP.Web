@@ -6,8 +6,8 @@ import Button from "@material-ui/core/Button";
 
 export default function ButtonCSMP(props) {
     return(
-        <Button onClick={props.onSave} className={'buttoncsmp'} variant="contained" color="primary">
-            Sacuvaj
+        <Button onClick={props.onSave} color={props.color} className={'buttoncsmp '+props.className} variant={props.variant}>
+            {props.text}
         </Button>
     );
 }

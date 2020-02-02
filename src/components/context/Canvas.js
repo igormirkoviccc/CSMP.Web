@@ -4,6 +4,9 @@ import CustomizeCanvasOperation from './CustomizeCanvasOperation';
 import CustomizeCanvasArrow from "./CustomizeCanvasArrow";
 import ParametarsModal from "./ParametarsModal";
 import SideBarInfoOperation from "./SideBarInfoOperation";
+import ButtonCSMP from "../controllers/ButtonCSMP";
+import {Tooltip} from "@material-ui/core";
+import TooltipCSMP from "../controllers/TooltipCSMP";
 
 
 
@@ -123,6 +126,10 @@ class Canvas extends Component{
                         {this.renderArrows()}
                     </Layer>
                 </Stage>
+                <ButtonCSMP text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
+                <ButtonCSMP text={'Export'} variant={'outlined'} className={'export_button'}/>
+                <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>
+
             </div>
         );
     }

@@ -33,7 +33,7 @@ html, body, .App, #root {
 
       .side_nav_container {
         height: 100%;
-        padding: 50px 20px 20px;
+        padding: 10px 20px 20px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -82,6 +82,7 @@ html, body, .App, #root {
   background-image: url("../assets/img/canvasbackground.png");
   background-position: right;
   overflow: hidden;
+  position: relative;
 
 
 
@@ -188,4 +189,36 @@ html, body, .App, #root {
     margin-top: 20px;
   }
 
+}
+
+.delete_button{
+  position: absolute !important;
+  top: 20px;
+  right: 320px;
+}
+
+.export_button{
+  position: absolute !important;
+  top: 20px;
+  right: 420px;
+}
+
+.tooltip_csmp{
+  position: absolute !important;
+  top: 28px;
+  right: 520px;
+
+}
+
+.tooltip_csmp.tooltip_element{
+  width: 20px;
+  font-size: 13px;
+  height: 20px;
+  background-color: #213545;
+  color: #F7F7F7;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  user-select: none;
 }

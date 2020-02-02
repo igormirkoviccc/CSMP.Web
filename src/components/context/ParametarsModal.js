@@ -99,7 +99,7 @@ export default class ParametarsModal extends Component{
                     <Fade in={this.props.modalOpen}>
                         <div className={'csmp_modal'}>
                             {this.renderTextfields()}
-                            <ButtonCSMP onSave={this.saveInputs}/>
+                            <ButtonCSMP variant={'contained'} text={'Save'} onSave={this.saveInputs}/>
                         </div>
                     </Fade>
                 </Modal>

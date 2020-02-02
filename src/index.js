@@ -179,7 +179,9 @@ global._data = [
         parametrs : [],
         maxInputs: 2
     },
-]
+];
+
+global._info = "This is CSMP application for simulation diferent proccess. On left side bar there is block(operations) and on click on them you add to canvas. On double click on operation you can take action, to delete it, to link it to other block. Purple color of block means you can link it with green one. "
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
