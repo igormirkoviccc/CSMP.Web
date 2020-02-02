@@ -35,10 +35,13 @@ class App extends Component {
     };
 
     changeAddedItem = (operationArg) =>{
-        let operation = {...operationArg, OperationID};
-        OperationID++;
-        this.setState({addedItem: operation, modalOpen: true});
-
+        if(operationArg.parametrs.length !== 0){
+            let operation = {...operationArg, OperationID};
+            OperationID++;
+            this.setState({addedItem: operation, modalOpen: true});
+        }else{
+            this.onAddingOperation(operationArg);
+        }
     };
 
     onAddingOperation = (operation) =>{
@@ -57,7 +60,6 @@ class App extends Component {
     };
 
     render(){
-        console.log(global._data);
         return(
          <div className="App">
              <ResizibleSideNav onClickOperation={this.changeAddedItem} onChangeWidth={this.onChangeWidth}/>

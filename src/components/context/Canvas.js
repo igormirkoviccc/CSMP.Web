@@ -135,8 +135,6 @@ class Canvas extends Component{
         this.props.updateRelationships(difference);
         this.unSelectOperation();
     };
-
-
     render(){
         return (
             <div className='canvas_context'>

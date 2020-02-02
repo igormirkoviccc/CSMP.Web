@@ -8,12 +8,11 @@ import SideBarInfoOperation from "./SideBarInfoOperation";
 class SideBarInfo extends Component{
     constructor(props){
         super(props);
-
     }
 
     renderSideInfoParametars = () =>{
         return this.props.selectedItem.inputs.map((item, index) =>{
-            return <div>{item.label} {item.value}</div>
+            return <div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>
         })
     };
 
@@ -38,7 +37,7 @@ class SideBarInfo extends Component{
                         <div className='sidebarinfo_operation_detail'>{this.props.selectedItem ? this.props.selectedItem.OperationID + '. '+this.props.selectedItem.name : ''}</div>
                         <div className='sidebarinfo_inputs'>
                             <div className='sidebarinfo_title'>
-                                Generatori funkcija
+                                Ulazi/Parametri
                             </div>
                             <div className='sidebarinfo_content'>
                                 {this.props.selectedItem ? this.renderSideInfoParametars() : null}

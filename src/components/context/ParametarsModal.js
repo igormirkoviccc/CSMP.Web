@@ -54,7 +54,6 @@ export default class ParametarsModal extends Component{
 
     saveInputs = () =>{
         let addingItem = this.props.item;
-        console.log(addingItem);
         this.props.item.parametrs.forEach((item, index) =>{
             switch (index) {
                 case 0:
