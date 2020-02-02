@@ -7,8 +7,6 @@ import ButtonCSMP from "../controllers/ButtonCSMP";
 import TooltipCSMP from "../controllers/TooltipCSMP";
 
 
-
-
 class Canvas extends Component{
     constructor(props){
         super(props);
@@ -18,7 +16,8 @@ class Canvas extends Component{
             selectedPosition: null,
             referencePosition: null,
             selectedItem: null,
-            referencedItem: null
+            referencedItem: null,
+            selectedArrow: null
         };
         this.myRef = React.createRef();
     }
@@ -27,7 +26,7 @@ class Canvas extends Component{
         return this.props.currentItems.map((item,index) =>{
                 return (
                     <CustomizeCanvasOperation
-                        key={'_' +index}
+                        key={'_' +item.OperationID}
                         referenceIndex={this.state.referenceIndex}
                         getPositionOfOperation={this.getPositionOfOperation}
                         selectedOperation={this.state.selectedIndex}
@@ -64,7 +63,6 @@ class Canvas extends Component{
         };
 
         this.changeRelationshipsPosition(e,index);
-
         if(index === this.state.selectedIndex){
             this.setState({selectedPosition: obj})
         }
@@ -80,7 +78,7 @@ class Canvas extends Component{
                 if (this.state.referenceIndex != null && this.state.selectedIndex != null) {
                     if(this.state.referenceIndex !== this.state.selectedIndex){
                         this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
-                        this.setState({selectedOperation: null, referencedOperation: null, selectedIndex: null, referenceIndex: null})
+                        this.unSelectOperation();
                     }
                 }
             })
@@ -111,7 +109,7 @@ class Canvas extends Component{
     };
 
     unSelectOperation = () =>{
-        this.setState({selectedPosition: null, selectedIndex: null, selectedItem: null});
+        this.setState({selectedPosition: null, selectedIndex: null, selectedItem: null, referenceIndex: null, referencePosition: null, referencedItem: null});
     };
 
     deleteNode = () =>{
@@ -139,6 +137,9 @@ class Canvas extends Component{
 
 
     render(){
+        console.log(this.state.selectedItem);
+        console.log(this.state.selectedPosition);
+        console.log(this.state.selectedIndex);
         return (
             <div className='canvas_context'>
                 {this.props.modalOpen ? <ParametarsModal modalOpen={this.props.modalOpen} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }

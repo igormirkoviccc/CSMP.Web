@@ -25,7 +25,7 @@ const CustomizeCanvasArrow =({node1, node2}) =>{
               arrowEnd.y]}/>
         );
 
-}
+};
 
 export default CustomizeCanvasArrow;
 

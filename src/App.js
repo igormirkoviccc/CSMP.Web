@@ -4,6 +4,7 @@ import ResizibleSideNav from "./components/context/ResizibleSideNav";
 import Canvas from "./components/context/Canvas";
 import SideBarInfo from "./components/context/SideBarInfo";
 
+let OperationID = 1;
 
 
 class App extends Component {
@@ -32,8 +33,11 @@ class App extends Component {
         this.setState({relationShips: relationships})
     };
 
-    changeAddedItem = (operation) =>{
+    changeAddedItem = (operationArg) =>{
+        let operation = {...operationArg, OperationID};
+        OperationID++;
         this.setState({addedItem: operation, modalOpen: true});
+
     };
 
     onAddingOperation = (operation) =>{

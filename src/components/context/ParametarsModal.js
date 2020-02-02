@@ -47,13 +47,13 @@ export default class ParametarsModal extends Component{
     updateTextFieldValues = (change, index) =>{
         switch (index) {
             case 0:
-                this.setState({textFieldOneValue: change})
+                this.setState({textFieldOneValue: change});
                 break;
             case 1:
-                this.setState({textFieldSecondValue: change})
+                this.setState({textFieldSecondValue: change});
                 break;
             case 2:
-                this.setState({textFieldThirdValue: change})
+                this.setState({textFieldThirdValue: change});
                 break;
         }
     }
@@ -79,7 +79,7 @@ export default class ParametarsModal extends Component{
             }
         });
         this.props.onAddingOperation(addingItem)
-    }
+    };
 
     render() {
 
