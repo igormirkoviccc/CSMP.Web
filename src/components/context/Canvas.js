@@ -1,11 +1,9 @@
 import React, {Component} from "react";
-import { Stage, Layer, Arrow} from 'react-konva';
+import { Stage, Layer} from 'react-konva';
 import CustomizeCanvasOperation from './CustomizeCanvasOperation';
 import CustomizeCanvasArrow from "./CustomizeCanvasArrow";
 import ParametarsModal from "./ParametarsModal";
-import SideBarInfoOperation from "./SideBarInfoOperation";
 import ButtonCSMP from "../controllers/ButtonCSMP";
-import {Tooltip} from "@material-ui/core";
 import TooltipCSMP from "../controllers/TooltipCSMP";
 
 
@@ -18,12 +16,12 @@ class Canvas extends Component{
             selectedIndex: null,
             referenceIndex: null,
             selectedPosition: null,
-            referencePosition: null
-        }
+            referencePosition: null,
+            selectedItem: null,
+            referencedItem: null
+        };
         this.myRef = React.createRef();
     }
-
-
 
     renderCanvasOperations = () => {
         return this.props.currentItems.map((item,index) =>{
@@ -81,7 +79,7 @@ class Canvas extends Component{
             this.setState({referencePosition: e.target.getStage().getPointerPosition()}, () =>{
                 if (this.state.referenceIndex != null && this.state.selectedIndex != null) {
                     if(this.state.referenceIndex !== this.state.selectedIndex){
-                        this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition})
+                        this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
                         this.setState({selectedOperation: null, referencedOperation: null, selectedIndex: null, referenceIndex: null})
                     }
                 }
@@ -91,12 +89,13 @@ class Canvas extends Component{
         }
     };
 
-    changeSelectedOperation = (selectedIndex) =>{
-        this.setState({selectedIndex})
+    changeSelectedOperation = (selectedIndex, selectedItem) =>{
+        this.setState({selectedIndex, selectedItem})
+
     };
 
-    makeReferenceIndex = (referenceIndex) =>{
-            this.setState({referenceIndex});
+    makeReferenceIndex = (referenceIndex, referencedItem) =>{
+            this.setState({referenceIndex, referencedItem});
     };
 
     onAddingRelationship = (relationship) =>{
@@ -111,6 +110,32 @@ class Canvas extends Component{
         })
     };
 
+    unSelectOperation = () =>{
+        this.setState({selectedPosition: null, selectedIndex: null, selectedItem: null});
+    };
+
+    deleteNode = () =>{
+        let deletedRelatioships = [];
+        let currentItems = this.props.currentItems.slice();
+        let relationships = this.props.relationShips.slice();
+
+        if(currentItems.indexOf(this.state.selectedItem) >= 0){
+            currentItems.splice(currentItems.indexOf(this.state.selectedItem),1)
+        }
+        relationships.forEach((item, index) =>{
+            if(item['first_node_ref'] === this.state.selectedItem){
+                deletedRelatioships.push(item);
+            } else if(item['second_node_ref'] === this.state.selectedItem){
+                deletedRelatioships.push(item);
+            }
+        });
+
+        let difference = relationships.filter(x => !deletedRelatioships.includes(x));
+
+        this.props.updateCurrentItems(currentItems);
+        this.props.updateRelationships(difference);
+        this.unSelectOperation();
+    };
 
 
     render(){
@@ -118,6 +143,7 @@ class Canvas extends Component{
             <div className='canvas_context'>
                 {this.props.modalOpen ? <ParametarsModal modalOpen={this.props.modalOpen} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
+                    onWheel={this.unSelectOperation}
                     width={window.innerWidth - this.props.resizableWidth - 100}
                     height={window.innerHeight}
                 >
@@ -126,10 +152,9 @@ class Canvas extends Component{
                         {this.renderArrows()}
                     </Layer>
                 </Stage>
-                <ButtonCSMP text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
+                <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
                 <ButtonCSMP text={'Export'} variant={'outlined'} className={'export_button'}/>
                 <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>
-
             </div>
         );
     }

@@ -24,7 +24,6 @@ class ResizibleSideNav extends Component{
     }
 
     addToArray = (item) =>{
-        console.log(item);
         this.props.onClickOperation(item);
     }
 

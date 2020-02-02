@@ -59,17 +59,18 @@ html, body, .App, #root {
       display: flex;
       align-items: center;
       position: absolute;
-      width: 20px;
+      width: 10px;
       height: 100%;
       background-color: #215263;
       right: 0;
       top: 0;
       text-align: center;
-      content: ".. .. ..";
+      content: "......";
       cursor: w-resize;
       line-height: 100%;
       color: white;
-      font-size: 20px;
+      font-size: 13px;
+      word-break: break-word;
     }
 
   }

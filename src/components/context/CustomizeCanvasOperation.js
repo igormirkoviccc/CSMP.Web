@@ -15,10 +15,10 @@ class CustomizeCanvasOperation extends Component{
     actionOnOperation = (e) =>{
         if(this.props.selectedOperation == null){
             this.props.getPositionOfOperation(e,'selectedOperation');
-            this.props.changeSelectedOperation(this.props.index);
+            this.props.changeSelectedOperation(this.props.index, this.props.item);
             return;
         }
-        this.props.makeReferenceIndex(this.props.index);
+        this.props.makeReferenceIndex(this.props.index, this.props.item);
         this.props.getPositionOfOperation(e,'referencedOperation');
     };
 

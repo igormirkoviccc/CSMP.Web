@@ -3,7 +3,6 @@ import './style/test.scss'
 import ResizibleSideNav from "./components/context/ResizibleSideNav";
 import Canvas from "./components/context/Canvas";
 import SideBarInfo from "./components/context/SideBarInfo";
-import ParametarsModal from "./components/context/ParametarsModal";
 
 
 
@@ -21,36 +20,38 @@ class App extends Component {
 
     onChangeWidth = (newWidth) =>{
         this.setState({resizableWidth: newWidth});
-    }
+    };
 
     onAddingRelationship = (relationship) =>{
         this.setState(prevState => ({
             relationShips: [...prevState.relationShips, relationship]
         }))
-    }
+    };
 
     updateRelationships = (relationships) =>{
         this.setState({relationShips: relationships})
-    }
+    };
 
     changeAddedItem = (operation) =>{
         this.setState({addedItem: operation, modalOpen: true});
-    }
+    };
 
     onAddingOperation = (operation) =>{
         this.setState(prevState => ({
             currentItems: [...prevState.currentItems, operation],
             modalOpen: false
         }))
+    };
 
-
-    }
+    updateCurrentItems = (currentItems) =>{
+        this.setState({currentItems})
+    };
 
     render(){
      return(
          <div className="App">
              <ResizibleSideNav onClickOperation={this.changeAddedItem} onChangeWidth={this.onChangeWidth}/>
-             <Canvas modalOpen={this.state.modalOpen} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
+             <Canvas updateCurrentItems={this.updateCurrentItems} modalOpen={this.state.modalOpen} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
              <SideBarInfo currentItems={this.state.currentItems}/>
          </div>
      )
