@@ -9,205 +9,232 @@ global._data = [
         label: 'A',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
-        img: 'arkus_tangens'
+        img: 'arkus_tangens',
+        inputs: []
     },
     {
         name: 'Sign',
         label: 'B',
         parametrs : [],
         maxInputs: 1,
-        img:'sign'
+        img:'sign',
+        inputs: []
     },
     {
         name: 'Cos',
         label: 'C',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
-        img:'kosinus'
+        img:'kosinus',
+        inputs: []
     },
     {
         name: 'Mrtva zona',
         label: 'D',
         parametrs : ['Donja granica', 'Gornja granica'],
         maxInputs: 1,
-        img:'mrtva_zona'
+        img:'mrtva_zona',
+        inputs: []
     },
     {
         name: 'Exp',
         label: 'E',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
-        img:'exp'
+        img:'exp',
+        inputs: []
     },
     {
         name: 'Generator funkcija',
         label: 'F',
         parametrs : ['Parametar 1', 'Parametar 2'],
         maxInputs: 1,
-        img: 'generator_funkcija'
+        img: 'generator_funkcija',
+        inputs: []
     },
     {
         name: 'Pojacanje',
         label: 'G',
         parametrs : ['Parametar 1'],
         maxInputs: 1,
-        img: 'pojacanje'
+        img: 'pojacanje',
+        inputs: []
     },
     {
         name: 'Kvadratni koren',
         label: 'H',
         parametrs : [],
         maxInputs: 1,
-        img: 'kvadratni_koren'
+        img: 'kvadratni_koren',
+        inputs: []
     },
     {
         name: 'Integrator',
         label: 'I',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 3,
-        img: 'integrator'
+        img: 'integrator',
+        inputs: []
     },
     {
         name: 'Generator slucajnih brojeva',
         label: 'J',
         parametrs : [],
         maxInputs: 0,
-        img:'generator_slucajnih_brojeva'
+        img:'generator_slucajnih_brojeva',
+        inputs: []
     },
     {
         name: 'Konstanta',
         label: 'K',
         parametrs : ['Konstanta'],
         maxInputs: 0,
-        img: 'konstanta'
+        img: 'konstanta',
+        inputs: []
     },
     {
         name: 'Ogranicavac',
         label: 'L',
         parametrs : ['Donja granica', 'Gornja granica'],
         maxInputs: 1,
-        img: 'ogranicavac'
+        img: 'ogranicavac',
+        inputs: []
     },
     {
         name: 'Apsolutna vrednost',
         label: 'M',
         parametrs : [],
         maxInputs: 1,
-        img: 'apsolutna_vrednost'
+        img: 'apsolutna_vrednost',
+        inputs: []
     },
     {
         name: 'Negativni ogranicavac',
         label: 'N',
         parametrs : [],
         maxInputs: 1,
-        img: 'negativni_ogranicavac'
+        img: 'negativni_ogranicavac',
+        inputs: []
     },
     {
         name: 'Offset',
         label: 'O',
         parametrs : ['Pomeraj'],
         maxInputs: 1,
-        img: 'offset'
+        img: 'offset',
+        inputs: []
     },
     {
         name: 'Pozitivni ogranicavac',
         label: 'P',
         parametrs : [],
         maxInputs: 1,
-        img: 'pozitivni_ogranicavac'
+        img: 'pozitivni_ogranicavac',
+        inputs: []
     },
     {
         name: 'Quit',
         label: 'Q',
         parametrs : [],
         maxInputs: 2,
-        img:'quit'
+        img:'quit',
+        inputs: []
     },
     {
         name: 'Relej',
         label: 'R',
         parametrs : [],
         maxInputs: 3,
-        img: 'relej'
+        img: 'relej',
+        inputs: []
     },
     {
         name: 'Sin',
         label: 'S',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
-        img: 'sinus'
-
+        img: 'sinus',
+        inputs: []
     },
     {
         name: 'Generator impulsa',
         label: 'T',
         parametrs : ['Parametar 1'],
         maxInputs: 1,
-        img: 'generator_impulsa'
-
+        img: 'generator_impulsa',
+        inputs: []
     },
     {
         name: 'Jedinicno kasnjenje',
         label: 'U',
         parametrs : [],
         maxInputs: 1,
-        img: 'jedinicno_kasnjenje'
+        img: 'jedinicno_kasnjenje',
+        inputs: []
     },
     {
         name: 'Vacuous',
         label: 'V',
         parametrs : ['Parametar 1'],
         maxInputs: 0,
-        img: 'vacuous'
+        img: 'vacuous',
+        inputs: []
     },
     {
         name: 'Sabirac',
         label: 'W',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 3,
-        img: 'sabirac'
+        img: 'sabirac',
+        inputs: []
     },
     {
         name: 'Mnozac',
         label: 'X',
         parametrs : [],
         maxInputs: 2,
-        img: 'mnozac'
+        img: 'mnozac',
+        inputs: []
     },
     {
         name: 'Wye',
         label: 'Wye',
         parametrs : ['Parametar 1'],
         maxInputs: 2,
-        img: 'wye'
+        img: 'wye',
+        inputs: []
     },
     {
         name: 'Kolo zadrske',
         label: 'Z',
         parametrs : [],
         maxInputs: 2,
-        img: 'kolo_zadrske'
+        img: 'kolo_zadrske',
+        inputs: []
     },
     {
         name: 'Delitelj',
         label: '/',
         parametrs : [],
         maxInputs: 2,
-        img: 'delitelj'
+        img: 'delitelj',
+        inputs: []
     },
     {
         name: 'Invertor',
         label: '-',
         parametrs : [],
         maxInputs: 1,
-        img: 'invertor'
+        img: 'invertor',
+        inputs: []
     },
     {
         name: 'Vreme',
         label: 't',
         parametrs : [],
         maxInputs: 2,
-        img: 'vreme'
+        img: 'vreme',
+        inputs: []
     },
 ];
 

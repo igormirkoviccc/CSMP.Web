@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
+    <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="adding pictures in blocks add sidebarinfo functionality">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/SideBarInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/SideBarInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/controllers/TextfieldCSMP.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/controllers/TextfieldCSMP.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +110,7 @@
       <workItem from="1579552853265" duration="7350000" />
       <workItem from="1580154541110" duration="7000" />
       <workItem from="1580327612294" duration="10933000" />
-      <workItem from="1580562283036" duration="44048000" />
+      <workItem from="1580562283036" duration="49394000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -267,7 +273,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580665342039</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="adding pictures in blocks add sidebarinfo functionality">
+      <created>1580665704779</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1580665704779</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

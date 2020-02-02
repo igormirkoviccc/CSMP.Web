@@ -17,6 +17,7 @@ export default class TextfieldCSMP extends Component {
     render(){
         return(
             <TextField
+                value={this.props.textFieldValue}
                 onChange={this.handleTextFieldChange}
                 id="outlined-password-input"
                 className={'textfieldcsmp'}

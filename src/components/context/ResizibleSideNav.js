@@ -28,7 +28,8 @@ class ResizibleSideNav extends Component{
     }
 
     mapData = () =>{
-        return global._data.map((item,index) =>{
+        let data = JSON.parse(JSON.stringify(global._data));
+        return data.map((item,index) =>{
             return <Operation onClickOperation={() => this.addToArray(item)} key={'_' + index} item={item}/>
         })
     };

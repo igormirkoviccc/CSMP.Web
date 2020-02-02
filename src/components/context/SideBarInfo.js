@@ -11,6 +11,12 @@ class SideBarInfo extends Component{
 
     }
 
+    renderSideInfoParametars = () =>{
+        return this.props.selectedItem.inputs.map((item, index) =>{
+            return <div>{item.label} {item.value}</div>
+        })
+    };
+
     renderSideInfoOperations = () =>{
         return this.props.currentItems.map((item, index) =>{
             return <SideBarInfoOperation key={'_' +index} index={index} item={item}/>
@@ -35,7 +41,7 @@ class SideBarInfo extends Component{
                                 Generatori funkcija
                             </div>
                             <div className='sidebarinfo_content'>
-
+                                {this.props.selectedItem ? this.renderSideInfoParametars() : null}
                             </div>
                         </div>
                         <div className='sidebarinfo_outputs'>
