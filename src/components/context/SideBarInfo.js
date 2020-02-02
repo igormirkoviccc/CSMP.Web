@@ -29,6 +29,7 @@ class SideBarInfo extends Component{
                                 {this.renderSideInfoOperations()}
                             </div>
                         </div>
+                        <div className='sidebarinfo_operation_detail'>{this.props.selectedItem ? this.props.selectedItem.OperationID + '. '+this.props.selectedItem.name : ''}</div>
                         <div className='sidebarinfo_inputs'>
                             <div className='sidebarinfo_title'>
                                 Generatori funkcija

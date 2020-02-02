@@ -95,21 +95,30 @@ html, body, .App, #root {
 
 .operation_context {
   white-space: normal;
-  width: 100px;
+  width: 51px;
   margin: 10px;
   text-align: left;
   user-select: none;
   -webkit-user-select: none;
   cursor: pointer;
+
+  .operation_title{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
 }
 .operation_container {
   width: 51px;
   height: 51px;
-  background-color: #86cfca;
+  background-color: #DCDCDC;
   color: #215263;
   border-radius: 7px;
   text-align: center;
   line-height: 50px;
+
+
 }
 
 .sidebarinfo {
@@ -124,6 +133,14 @@ html, body, .App, #root {
   .sidebarinfo_container {
     height: 100%;
     width: 100%;
+
+    .sidebarinfo_operation_detail{
+      background-color: white;
+      border-bottom: 1px solid black;
+      border-top: 1px solid black;
+
+      text-align: center;
+    }
 
     .sidebarinfo_title {
       width: 100%;

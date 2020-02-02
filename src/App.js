@@ -15,7 +15,8 @@ class App extends Component {
             resizableWidth: 0,
             currentItems:[],
             relationShips: [],
-            modalOpen: false
+            modalOpen: false,
+            selectedItem: null
         }
     }
 
@@ -47,6 +48,10 @@ class App extends Component {
         }))
     };
 
+    changeSelectedItem = (selectedItem) =>{
+        this.setState({selectedItem})
+    }
+
     updateCurrentItems = (currentItems) =>{
         this.setState({currentItems})
     };
@@ -55,8 +60,8 @@ class App extends Component {
      return(
          <div className="App">
              <ResizibleSideNav onClickOperation={this.changeAddedItem} onChangeWidth={this.onChangeWidth}/>
-             <Canvas updateCurrentItems={this.updateCurrentItems} modalOpen={this.state.modalOpen} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
-             <SideBarInfo currentItems={this.state.currentItems}/>
+             <Canvas changeSelectedItem={this.changeSelectedItem} updateCurrentItems={this.updateCurrentItems} modalOpen={this.state.modalOpen} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
+             <SideBarInfo selectedItem={this.state.selectedItem} currentItems={this.state.currentItems}/>
          </div>
      )
     }

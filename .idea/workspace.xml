@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
+    <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="adding pictures in blocks ..">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Operation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Operation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/CustomizeCanvasOperation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/SideBarInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/SideBarInfo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/style/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/test.scss" afterDir="false" />
     </list>
@@ -110,7 +110,7 @@
       <workItem from="1579552853265" duration="7350000" />
       <workItem from="1580154541110" duration="7000" />
       <workItem from="1580327612294" duration="10933000" />
-      <workItem from="1580562283036" duration="40322000" />
+      <workItem from="1580562283036" duration="43532000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -259,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580645178087</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="adding pictures in blocks ..">
+      <created>1580655157768</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1580655157769</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +316,8 @@
     <MESSAGE value="adding button for export delete and tooltip for information.. update text !!!" />
     <MESSAGE value="adding delete functionality" />
     <MESSAGE value="fixing delete functionality" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixing delete functionality" />
+    <MESSAGE value="adding pictures in blocks .." />
+    <option name="LAST_COMMIT_MESSAGE" value="adding pictures in blocks .." />
   </component>
   <component name="WindowStateProjectService">
     <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">

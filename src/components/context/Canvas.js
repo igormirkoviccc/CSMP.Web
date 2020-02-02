@@ -89,7 +89,7 @@ class Canvas extends Component{
 
     changeSelectedOperation = (selectedIndex, selectedItem) =>{
         this.setState({selectedIndex, selectedItem})
-
+        this.props.changeSelectedItem(selectedItem);
     };
 
     makeReferenceIndex = (referenceIndex, referencedItem) =>{
@@ -110,6 +110,7 @@ class Canvas extends Component{
 
     unSelectOperation = () =>{
         this.setState({selectedPosition: null, selectedIndex: null, selectedItem: null, referenceIndex: null, referencePosition: null, referencedItem: null});
+        this.props.changeSelectedItem(null)
     };
 
     deleteNode = () =>{

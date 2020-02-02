@@ -157,49 +157,57 @@ global._data = [
         name: 'Vacuous',
         label: 'V',
         parametrs : ['Parametar 1'],
-        maxInputs: 0
+        maxInputs: 0,
+        img: 'vacuous'
     },
     {
         name: 'Sabirac',
         label: 'W',
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
-        maxInputs: 3
+        maxInputs: 3,
+        img: 'sabirac'
     },
     {
         name: 'Mnozac',
         label: 'X',
         parametrs : [],
-        maxInputs: 2
+        maxInputs: 2,
+        img: 'mnozac'
     },
     {
         name: 'Wye',
         label: 'Wye',
         parametrs : ['Parametar 1'],
-        maxInputs: 2
+        maxInputs: 2,
+        img: 'wye'
     },
     {
         name: 'Kolo zadrske',
         label: 'Z',
         parametrs : [],
-        maxInputs: 2
+        maxInputs: 2,
+        img: 'kolo_zadrske'
     },
     {
         name: 'Delitelj',
         label: '/',
         parametrs : [],
-        maxInputs: 2
+        maxInputs: 2,
+        img: 'delitelj'
     },
     {
         name: 'Invertor',
         label: '-',
         parametrs : [],
-        maxInputs: 1
+        maxInputs: 1,
+        img: 'invertor'
     },
     {
         name: 'Vreme',
         label: 't',
         parametrs : [],
-        maxInputs: 2
+        maxInputs: 2,
+        img: 'vreme'
     },
 ];
 
