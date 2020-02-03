@@ -71,8 +71,17 @@ class Canvas extends Component{
         }
     };
 
+
+    updateDataForRelationship = () =>{
+        if(this.state.referencedItem.inputsArray.length <= this.state.referencedItem.maxInputs){
+            this.state.referencedItem.inputsArray.push(this.state.selectedItem);
+            this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
+        }
+    };
+
+
     openModalOnRelationships = () =>{
-        this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
+        this.updateDataForRelationship();
         this.unSelectOperation();
         this.props.modalClose();
     };
@@ -126,6 +135,15 @@ class Canvas extends Component{
         if(currentItems.indexOf(this.state.selectedItem) >= 0){
             currentItems.splice(currentItems.indexOf(this.state.selectedItem),1)
         }
+
+        for (let i = 0; i < currentItems.length; i++) {
+            for (let j = 0; j < currentItems[i].inputsArray.length; j++) {
+                if(this.state.selectedItem.OperationID === currentItems[i].inputsArray[j].OperationID){
+                    currentItems[i].inputsArray.splice(j,1);
+                }
+            }
+        }
+
         relationships.forEach((item, index) =>{
             if(item['first_node_ref'] === this.state.selectedItem){
                 deletedRelatioships.push(item);

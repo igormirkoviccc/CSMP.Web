@@ -57,7 +57,7 @@ export default class ParametarsModal extends Component{
         let arrayOfCheckboxControlers = [];
         for (let i = 0; i < this.props.referencedItem.maxInputs ; i++) {
             arrayOfCheckboxControlers.push(
-                <CheckboxCSMP className='csmp_checkbox' label={'Ulaz '+ (i+1)}/>
+                <CheckboxCSMP disabled={this.props.referencedItem.inputsArray[i]} checked={this.props.referencedItem.inputsArray[i]} className='csmp_checkbox' label={'Ulaz '+ (i+1)}/>
             )
         }
         return arrayOfCheckboxControlers;
@@ -88,7 +88,6 @@ export default class ParametarsModal extends Component{
     };
 
     render() {
-        console.log(this.props.modalMode);
         return (
             <div>
                 <Modal

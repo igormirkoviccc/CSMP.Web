@@ -10,7 +10,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
         img: 'arkus_tangens',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Sign',
@@ -18,7 +19,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img:'sign',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Cos',
@@ -26,7 +28,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
         img:'kosinus',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Mrtva zona',
@@ -34,7 +37,8 @@ global._data = [
         parametrs : ['Donja granica', 'Gornja granica'],
         maxInputs: 1,
         img:'mrtva_zona',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Exp',
@@ -42,7 +46,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
         img:'exp',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Generator funkcija',
@@ -50,7 +55,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2'],
         maxInputs: 1,
         img: 'generator_funkcija',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Pojacanje',
@@ -58,7 +64,8 @@ global._data = [
         parametrs : ['Parametar 1'],
         maxInputs: 1,
         img: 'pojacanje',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Kvadratni koren',
@@ -66,7 +73,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img: 'kvadratni_koren',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Integrator',
@@ -74,7 +82,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 3,
         img: 'integrator',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Generator slucajnih brojeva',
@@ -82,7 +91,8 @@ global._data = [
         parametrs : [],
         maxInputs: 0,
         img:'generator_slucajnih_brojeva',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Konstanta',
@@ -90,7 +100,8 @@ global._data = [
         parametrs : ['Konstanta'],
         maxInputs: 0,
         img: 'konstanta',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Ogranicavac',
@@ -98,7 +109,8 @@ global._data = [
         parametrs : ['Donja granica', 'Gornja granica'],
         maxInputs: 1,
         img: 'ogranicavac',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Apsolutna vrednost',
@@ -106,7 +118,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img: 'apsolutna_vrednost',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Negativni ogranicavac',
@@ -114,7 +127,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img: 'negativni_ogranicavac',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Offset',
@@ -122,7 +136,8 @@ global._data = [
         parametrs : ['Pomeraj'],
         maxInputs: 1,
         img: 'offset',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Pozitivni ogranicavac',
@@ -130,7 +145,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img: 'pozitivni_ogranicavac',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Quit',
@@ -138,7 +154,8 @@ global._data = [
         parametrs : [],
         maxInputs: 2,
         img:'quit',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Relej',
@@ -146,7 +163,8 @@ global._data = [
         parametrs : [],
         maxInputs: 3,
         img: 'relej',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Sin',
@@ -154,7 +172,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 1,
         img: 'sinus',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Generator impulsa',
@@ -162,7 +181,8 @@ global._data = [
         parametrs : ['Parametar 1'],
         maxInputs: 1,
         img: 'generator_impulsa',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Jedinicno kasnjenje',
@@ -170,7 +190,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img: 'jedinicno_kasnjenje',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Vacuous',
@@ -178,7 +199,8 @@ global._data = [
         parametrs : ['Parametar 1'],
         maxInputs: 0,
         img: 'vacuous',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Sabirac',
@@ -186,7 +208,8 @@ global._data = [
         parametrs : ['Parametar 1', 'Parametar 2', 'Parametar 3'],
         maxInputs: 3,
         img: 'sabirac',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Mnozac',
@@ -194,7 +217,8 @@ global._data = [
         parametrs : [],
         maxInputs: 2,
         img: 'mnozac',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Wye',
@@ -202,7 +226,8 @@ global._data = [
         parametrs : ['Parametar 1'],
         maxInputs: 2,
         img: 'wye',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Kolo zadrske',
@@ -210,7 +235,8 @@ global._data = [
         parametrs : [],
         maxInputs: 2,
         img: 'kolo_zadrske',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Delitelj',
@@ -218,7 +244,8 @@ global._data = [
         parametrs : [],
         maxInputs: 2,
         img: 'delitelj',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Invertor',
@@ -226,7 +253,8 @@ global._data = [
         parametrs : [],
         maxInputs: 1,
         img: 'invertor',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
     {
         name: 'Vreme',
@@ -234,7 +262,8 @@ global._data = [
         parametrs : [],
         maxInputs: 2,
         img: 'vreme',
-        inputs: []
+        inputs: [],
+        inputsArray: []
     },
 ];
 

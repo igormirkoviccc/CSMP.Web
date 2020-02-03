@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/controllers/CheckboxCSMP.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/test.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,6 +75,16 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="npm start" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -87,6 +95,11 @@
       <envs />
       <method v="2" />
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.build" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -111,7 +124,7 @@
       <workItem from="1580327612294" duration="10933000" />
       <workItem from="1580562283036" duration="51277000" />
       <workItem from="1580682485392" duration="55000" />
-      <workItem from="1580688067493" duration="1373000" />
+      <workItem from="1580688067493" duration="5862000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -295,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580671918280</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="modal relationships fixed..">
+      <created>1580689559016</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1580689559017</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +369,8 @@
     <MESSAGE value="adding pictures in blocks add sidebarinfo functionality" />
     <MESSAGE value="stop referencing global ._data" />
     <MESSAGE value="modal not showing on 0 parametars block" />
-    <option name="LAST_COMMIT_MESSAGE" value="modal not showing on 0 parametars block" />
+    <MESSAGE value="modal relationships fixed.." />
+    <option name="LAST_COMMIT_MESSAGE" value="modal relationships fixed.." />
   </component>
   <component name="WindowStateProjectService">
     <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">
