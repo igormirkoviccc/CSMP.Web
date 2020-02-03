@@ -11,11 +11,17 @@ export default class CheckboxCSMP extends Component {
 
     }
 
+    handleChange = () =>{
+        this.props.onChange(!this.props.checked, this.props.index);
+    };
+
     render(){
         return(
             <FormControlLabel
                 control={
                     <Checkbox
+                        disabled={this.props.disabled}
+                        onChange={this.handleChange}
                         checked={this.props.checked}
                         value="checkedB"
                         color="primary"

@@ -14,7 +14,11 @@ export default class ParametarsModal extends Component{
         this.state = {
             textFieldOneValue: 0,
             textFieldSecondValue: 0,
-            textFieldThirdValue: 0
+            textFieldThirdValue: 0,
+            checkboxOneValue: this.props.referencedItem ? !!((this.props.referencedItem.inputsArray[0] && this.props.referencedItem.inputsArray[0].location === 1) || (this.props.referencedItem.inputsArray[1] && this.props.referencedItem.inputsArray[1].location === 1) || (this.props.referencedItem.inputsArray[2] && this.props.referencedItem.inputsArray[2].location === 1)) : null,
+            checkboxTwoValue: this.props.referencedItem ? !!((this.props.referencedItem.inputsArray[0] && this.props.referencedItem.inputsArray[0].location === 2) || (this.props.referencedItem.inputsArray[1] && this.props.referencedItem.inputsArray[1].location === 2) || (this.props.referencedItem.inputsArray[2] && this.props.referencedItem.inputsArray[2].location === 2)) : null,
+            checkboxThirdValue: this.props.referencedItem ? !!((this.props.referencedItem.inputsArray[0] && this.props.referencedItem.inputsArray[0].location === 3) || (this.props.referencedItem.inputsArray[1] && this.props.referencedItem.inputsArray[1].location === 3) || (this.props.referencedItem.inputsArray[2] && this.props.referencedItem.inputsArray[2].location === 3)) : null,
+            changed: 0
         }
     }
 
@@ -26,6 +30,19 @@ export default class ParametarsModal extends Component{
                 return this.state.textFieldSecondValue;
             case 2:
                 return this.state.textFieldThirdValue;
+            default:
+                break;
+        }
+    };
+
+    getCheckedValues = (key) =>{
+        switch (key) {
+            case 0:
+                return this.state.checkboxOneValue;
+            case 1:
+                return this.state.checkboxTwoValue;
+            case 2:
+                return this.state.checkboxThirdValue;
             default:
                 break;
         }
@@ -53,12 +70,45 @@ export default class ParametarsModal extends Component{
         })
     };
 
+    handleChangeCheckbox = (value, index) =>{
+        switch (index) {
+            case 0:
+                this.setState({checkboxOneValue: value, changed: 1});
+                break;
+            case 1:
+                this.setState({checkboxTwoValue: value, changed: 2});
+                break;
+            case 2:
+                this.setState({checkboxThirdValue: value, changed: 3});
+                break;
+            default:
+                break;
+
+        }
+    };
+
+    checkIfItHas = (index) =>{
+        for (let j = 0; j < this.props.referencedItem.inputsArray.length; j++) {
+            if(this.props.referencedItem.inputsArray[j].location === index + 1){
+                return true;
+            }
+        }
+        return false;
+    };
+
+
+
     renderInputs = () =>{
         let arrayOfCheckboxControlers = [];
         for (let i = 0; i < this.props.referencedItem.maxInputs ; i++) {
+            console.log(this.checkIfItHas(i))
             arrayOfCheckboxControlers.push(
-                <CheckboxCSMP disabled={this.props.referencedItem.inputsArray[i]} checked={this.props.referencedItem.inputsArray[i]} className='csmp_checkbox' label={'Ulaz '+ (i+1)}/>
+                <CheckboxCSMP disabled={this.checkIfItHas(i)} onChange={this.handleChangeCheckbox} index={i} checked={this.getCheckedValues(i)} className='csmp_checkbox' label={'Ulaz '+ (i+1)}/>
             )
+        }
+
+        if(this.props.referencedItem.maxInputs === 0){
+            arrayOfCheckboxControlers.push(<div>Ne moze se povezati konstanta!</div>)
         }
         return arrayOfCheckboxControlers;
     };
@@ -83,7 +133,8 @@ export default class ParametarsModal extends Component{
             });
             this.props.onAddingOperation(addingItem)
         }else if(this.props.modalMode === 'adding_relationship'){
-            this.props.openModalOnRelationships();
+            console.log('im here');
+            this.props.openModalOnRelationships(this.state.changed);
         }
     };
 

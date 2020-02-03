@@ -72,16 +72,18 @@ class Canvas extends Component{
     };
 
 
-    updateDataForRelationship = () =>{
-        if(this.state.referencedItem.inputsArray.length <= this.state.referencedItem.maxInputs){
-            this.state.referencedItem.inputsArray.push(this.state.selectedItem);
+    updateDataForRelationship = (changed) =>{
+        console.log(this.state.referencedItem.inputsArray.length);
+        console.log(this.state.referencedItem.maxInputs);
+        if(this.state.referencedItem.inputsArray.length + 1 <= this.state.referencedItem.maxInputs){
+            this.state.referencedItem.inputsArray.push({node: this.state.selectedItem, location: changed});
             this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
         }
     };
 
 
-    openModalOnRelationships = () =>{
-        this.updateDataForRelationship();
+    openModalOnRelationships = (changed) =>{
+        this.updateDataForRelationship(changed);
         this.unSelectOperation();
         this.props.modalClose();
     };
@@ -102,7 +104,7 @@ class Canvas extends Component{
     };
 
     changeSelectedOperation = (selectedIndex, selectedItem) =>{
-        this.setState({selectedIndex, selectedItem})
+        this.setState({selectedIndex, selectedItem});
         this.props.changeSelectedItem(selectedItem);
     };
 
@@ -111,7 +113,9 @@ class Canvas extends Component{
     };
 
     onAddingRelationship = (relationship) =>{
-        this.props.onAddingRelationship(relationship);
+        if(this.state.referencedItem.maxInputs !== 0){
+            this.props.onAddingRelationship(relationship);
+        }
     };
 
     renderArrows = () =>{
