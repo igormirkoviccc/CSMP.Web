@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../../style/test.scss'
-import SideNav from "./SideNav";
 import Operation from "../Operation";
 
 

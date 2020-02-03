@@ -16,6 +16,7 @@ class App extends Component {
             currentItems:[],
             relationShips: [],
             modalOpen: false,
+            modalMode: '',
             selectedItem: null
         }
     }
@@ -38,7 +39,7 @@ class App extends Component {
         if(operationArg.parametrs.length !== 0){
             let operation = {...operationArg, OperationID};
             OperationID++;
-            this.setState({addedItem: operation, modalOpen: true});
+            this.setState({addedItem: operation, modalOpen: true, modalMode: 'adding_operation'});
         }else{
             this.onAddingOperation(operationArg);
         }
@@ -51,6 +52,15 @@ class App extends Component {
         }))
     };
 
+
+    changeAddedRelationship = () =>{
+        this.setState({modalOpen: true, modalMode: 'adding_relationship'});
+    };
+
+    modalClose = () =>{
+        this.setState({modalOpen: false, modalMode: ''});
+    };
+
     changeSelectedItem = (selectedItem) =>{
         this.setState({selectedItem})
     };
@@ -59,11 +69,13 @@ class App extends Component {
         this.setState({currentItems})
     };
 
+
+
     render(){
         return(
          <div className="App">
              <ResizibleSideNav onClickOperation={this.changeAddedItem} onChangeWidth={this.onChangeWidth}/>
-             <Canvas changeSelectedItem={this.changeSelectedItem} updateCurrentItems={this.updateCurrentItems} modalOpen={this.state.modalOpen} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
+             <Canvas modalClose={this.modalClose} onModalOpen={this.changeAddedRelationship} changeSelectedItem={this.changeSelectedItem} updateCurrentItems={this.updateCurrentItems} modalOpen={this.state.modalOpen} modalMode={this.state.modalMode} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
              <SideBarInfo selectedItem={this.state.selectedItem} currentItems={this.state.currentItems}/>
          </div>
      )

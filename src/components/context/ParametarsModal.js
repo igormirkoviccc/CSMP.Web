@@ -5,6 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import TextfieldCSMP from "../controllers/TextfieldCSMP";
 import ButtonCSMP from "../controllers/ButtonCSMP";
+import CheckboxCSMP from "../controllers/CheckboxCSMP";
 
 export default class ParametarsModal extends Component{
     constructor(props){
@@ -52,27 +53,42 @@ export default class ParametarsModal extends Component{
         })
     };
 
+    renderInputs = () =>{
+        let arrayOfCheckboxControlers = [];
+        for (let i = 0; i < this.props.referencedItem.maxInputs ; i++) {
+            arrayOfCheckboxControlers.push(
+                <CheckboxCSMP className='csmp_checkbox' label={'Ulaz '+ (i+1)}/>
+            )
+        }
+        return arrayOfCheckboxControlers;
+    };
+
     saveInputs = () =>{
-        let addingItem = this.props.item;
-        this.props.item.parametrs.forEach((item, index) =>{
-            switch (index) {
-                case 0:
-                    addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldOneValue)});
-                    return;
-                case 1:
-                    addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldSecondValue)});
-                    return;
+        if(this.props.modalMode === 'adding_operation'){
+            let addingItem = this.props.item;
+            this.props.item.parametrs.forEach((item, index) =>{
+                switch (index) {
+                    case 0:
+                        addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldOneValue)});
+                        return;
+                    case 1:
+                        addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldSecondValue)});
+                        return;
                     case 2:
                         addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldThirdValue)});
-                    return;
-                default:
-                    break;
-            }
-        });
-        this.props.onAddingOperation(addingItem)
+                        return;
+                    default:
+                        break;
+                }
+            });
+            this.props.onAddingOperation(addingItem)
+        }else if(this.props.modalMode === 'adding_relationship'){
+            this.props.openModalOnRelationships();
+        }
     };
 
     render() {
+        console.log(this.props.modalMode);
         return (
             <div>
                 <Modal
@@ -87,7 +103,7 @@ export default class ParametarsModal extends Component{
                 >
                     <Fade in={this.props.modalOpen}>
                         <div className={'csmp_modal'}>
-                            {this.renderTextfields()}
+                            {this.props.modalMode ==='adding_operation' ? this.renderTextfields() : this.renderInputs()}
                             <ButtonCSMP variant={'contained'} text={'Save'} onClick={this.saveInputs}/>
                         </div>
                     </Fade>

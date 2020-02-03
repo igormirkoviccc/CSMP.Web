@@ -138,7 +138,6 @@ html, body, .App, #root {
       background-color: white;
       border-bottom: 1px solid black;
       border-top: 1px solid black;
-
       text-align: center;
     }
 
@@ -201,6 +200,11 @@ html, body, .App, #root {
 
   .textfieldcsmp{
     margin-bottom: 10px;
+  }
+
+  .csmp_checkbox{
+    display: block;
+
   }
 
   .buttoncsmp{

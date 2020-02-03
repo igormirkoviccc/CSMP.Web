@@ -71,14 +71,19 @@ class Canvas extends Component{
         }
     };
 
+    openModalOnRelationships = () =>{
+        this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
+        this.unSelectOperation();
+        this.props.modalClose();
+    };
+
 
     getPositionOfOperation = (e, param) =>{
         if(param ==='referencedOperation'){
             this.setState({referencePosition: e.target.getStage().getPointerPosition()}, () =>{
                 if (this.state.referenceIndex != null && this.state.selectedIndex != null) {
                     if(this.state.referenceIndex !== this.state.selectedIndex){
-                        this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
-                        this.unSelectOperation();
+                        this.props.onModalOpen();
                     }
                 }
             })
@@ -138,7 +143,7 @@ class Canvas extends Component{
     render(){
         return (
             <div className='canvas_context'>
-                {this.props.modalOpen ? <ParametarsModal modalOpen={this.props.modalOpen} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
+                {this.props.modalOpen ? <ParametarsModal openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
                     onWheel={this.unSelectOperation}
                     width={window.innerWidth - this.props.resizableWidth - 100}

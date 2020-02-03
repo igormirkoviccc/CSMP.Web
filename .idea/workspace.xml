@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/controllers/CheckboxCSMP.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/SideBarInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/SideBarInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ResizibleSideNav.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style/test.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/style/test.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -107,7 +109,9 @@
       <workItem from="1579552853265" duration="7350000" />
       <workItem from="1580154541110" duration="7000" />
       <workItem from="1580327612294" duration="10933000" />
-      <workItem from="1580562283036" duration="50218000" />
+      <workItem from="1580562283036" duration="51277000" />
+      <workItem from="1580682485392" duration="55000" />
+      <workItem from="1580688067493" duration="1373000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -284,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1580671195000</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="modal not showing on 0 parametars block">
+      <created>1580671918280</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1580671918280</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +348,8 @@
     <MESSAGE value="adding pictures in blocks .." />
     <MESSAGE value="adding pictures in blocks add sidebarinfo functionality" />
     <MESSAGE value="stop referencing global ._data" />
-    <option name="LAST_COMMIT_MESSAGE" value="stop referencing global ._data" />
+    <MESSAGE value="modal not showing on 0 parametars block" />
+    <option name="LAST_COMMIT_MESSAGE" value="modal not showing on 0 parametars block" />
   </component>
   <component name="WindowStateProjectService">
     <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">
