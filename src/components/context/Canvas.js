@@ -162,7 +162,7 @@ class Canvas extends Component{
     };
     render(){
         return (
-            <div className='canvas_context'>
+            <div className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
                 {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
                     onWheel={this.unSelectOperation}
@@ -174,10 +174,12 @@ class Canvas extends Component{
                         {this.renderArrows()}
                     </Layer>
                 </Stage>
+                <div className={'options_canvas'}>
                 <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
                 <ButtonCSMP onClick={this.exportData} text={'Export'} variant={'outlined'} className={'export_button'}/>
                 <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>
-            </div>
+                </div>
+                </div>
         );
     }
 }

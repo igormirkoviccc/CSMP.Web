@@ -78,7 +78,6 @@ html, body, .App, #root {
 
 
 .canvas_context {
-  width: auto;
   display: inline-block;
   background-image: url("../assets/img/canvasbackground.png");
   background-position: right;
@@ -213,23 +212,13 @@ html, body, .App, #root {
 
 }
 
-.delete_button{
-  position: absolute !important;
+.options_canvas{
+  position: absolute;
   top: 20px;
-  right: 320px;
-}
-
-.export_button{
-  position: absolute !important;
-  top: 20px;
-  right: 420px;
-}
-
-.tooltip_csmp{
-  position: absolute !important;
-  top: 28px;
-  right: 520px;
-
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
 }
 
 .tooltip_csmp.tooltip_element{
