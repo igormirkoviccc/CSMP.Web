@@ -19,7 +19,8 @@ class App extends Component {
             relationShips: [],
             modalOpen: false,
             modalMode: '',
-            selectedItem: null
+            selectedItem: null,
+            optionsData: []
         }
     }
 
@@ -101,14 +102,23 @@ class App extends Component {
 
 
     exportData = () =>{
+
+
         const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
         const fileExtension = '.xlsx';
-        console.log(this.makeDataForExport())
         const ws = XLSX.utils.json_to_sheet(this.makeDataForExport());
-        const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+        const ws1 = XLSX.utils.json_to_sheet([this.state.optionsData]);
+        const wb = XLSX.utils.book_new();
+        XLSX.utils.book_append_sheet(wb, ws,"Konfiguraciona tabela");
+        XLSX.utils.book_append_sheet(wb, ws1,"Opcije");
+        // const wb = { Sheets: [{ 'data': ws}, {'data1':ws1 }], SheetNames: ['data','data1'] };
         const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
         const data = new Blob([excelBuffer], {type: fileType});
         FileSaver.saveAs(data, 'export' + fileExtension);
+    };
+
+    saveOptionsData = (data) =>{
+        this.setState({optionsData: data})
     };
 
 
@@ -135,6 +145,7 @@ class App extends Component {
                  relationShips={this.state.relationShips}
                  onAddingRelationship={this.onAddingRelationship}
                  currentItems={this.state.currentItems}
+                 saveOptionsData={this.saveOptionsData}
                  resizableWidth={this.state.resizableWidth}/>
              <SideBarInfo
                  selectedItem={this.state.selectedItem}

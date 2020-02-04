@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {Rect, Group, Text, Label, Image} from 'react-konva';
+import {Rect, Group, Label, Image} from 'react-konva';
 
 
 class CustomizeCanvasOperation extends Component{
@@ -90,7 +90,8 @@ class CustomizeCanvasOperation extends Component{
                         shadowForStrokeEnabled={true}
                         stroke="black"
                     />
-                    <Group offsetX={-5} offsetY={-5}>
+                    {/*<Text offsetY={-2} offsetX={-2} text={this.props.item.OperationID}/>*/}
+                    <Group offsetX={-10} offsetY={-10}>
                     <Image image={this.state.image} space="fill"/>
                     </Group>
                 </Group>

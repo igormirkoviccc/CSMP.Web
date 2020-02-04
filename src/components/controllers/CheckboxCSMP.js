@@ -6,10 +6,7 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 
 
 export default class CheckboxCSMP extends Component {
-    constructor(props){
-        super(props);
 
-    }
 
     handleChange = () =>{
         this.props.onChange(!this.props.checked, this.props.index);

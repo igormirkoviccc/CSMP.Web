@@ -5,6 +5,7 @@ import CustomizeCanvasArrow from "./CustomizeCanvasArrow";
 import ParametarsModal from "./ParametarsModal";
 import ButtonCSMP from "../controllers/ButtonCSMP";
 import TooltipCSMP from "../controllers/TooltipCSMP";
+import OptionsModal from "./OptionsModal";
 
 
 
@@ -18,7 +19,8 @@ class Canvas extends Component{
             referencePosition: null,
             selectedItem: null,
             referencedItem: null,
-            selectedArrow: null
+            selectedArrow: null,
+            optionsModal: false
         };
         this.myRef = React.createRef();
     }
@@ -162,12 +164,29 @@ class Canvas extends Component{
     };
 
     openOptionsModal = () =>{
-        this.props.onModalOpenOptions();
+        this.setState({optionsModal: true})
     };
+
+    closeOptionsModal = () =>{
+        this.setState({optionsModal: false})
+    };
+
+    closeOptionsModalAndSaveData = (data) =>{
+        this.props.saveOptionsData(data);
+        this.closeOptionsModal();
+    };
+
+    renderOptionsModal = () =>{
+        if(this.state.optionsModal === true){
+            return <OptionsModal modalOpen={this.state.optionsModal} optionsModal={this.state.optionsModal} onModalSaveAndClose={this.closeOptionsModalAndSaveData} closeOptionsModal={this.closeOptionsModal}/>
+        }
+    };
+
 
     render(){
         return (
             <div className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
+                {this.renderOptionsModal()}
                 {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
                     onWheel={this.unSelectOperation}
@@ -180,7 +199,7 @@ class Canvas extends Component{
                     </Layer>
                 </Stage>
                 <div className={'options_canvas'}>
-                    <ButtonCSMP  text={'Options'} variant={'outlined'} className={'export_button'}/>
+                    <ButtonCSMP onClick={this.openOptionsModal} text={'Options'} variant={'outlined'} className={'export_button'}/>
                     <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
                     <ButtonCSMP onClick={this.exportData} text={'Export'} variant={'outlined'} className={'export_button'}/>
                     <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>

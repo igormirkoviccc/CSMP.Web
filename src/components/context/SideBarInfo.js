@@ -12,25 +12,25 @@ class SideBarInfo extends Component{
 
     renderSideInfoParametars = () =>{
         return this.props.selectedItem.inputs.map((item, index) =>{
-            return <div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>
+            return <div><div key={index + '_'} style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>
         })
     };
 
     renderSideInfoInputs = () =>{
         return this.props.selectedItem.inputsArray.map((item, index) =>{
-            return <div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.node.OperationID}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.node.name}</div></div>
+            return <div><div key={index + '_'} style={{display: 'inline-block', width: 50 + '%'}}>{item.node.OperationID}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.node.name}</div></div>
         })
     };
 
     renderBoth = () =>{
         let array = [];
         array.push(<div>Parametri</div>)
-        this.props.selectedItem.inputs.forEach((item) =>{
-            array.push(<div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>);
+        this.props.selectedItem.inputs.forEach((item, index) =>{
+            array.push(<div><div key={'_'+index} style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>);
         });
         array.push(<div>Ulazi</div>)
-        this.props.selectedItem.inputsArray.forEach((item) =>{
-            array.push(<div><div style={{display: 'inline-block'}}>{item.node.OperationID+'.'}</div><div style={{display: 'inline-block'}}>{item.node.name}</div></div>);
+        this.props.selectedItem.inputsArray.forEach((item,index) =>{
+            array.push(<div><div key={'_'+index} style={{display: 'inline-block'}}>{item.node.OperationID+'.'}</div><div style={{display: 'inline-block'}}>{item.node.name}</div></div>);
         });
         return array;
     };
