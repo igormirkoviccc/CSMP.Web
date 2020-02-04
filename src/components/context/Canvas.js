@@ -180,7 +180,7 @@ class Canvas extends Component{
                     </Layer>
                 </Stage>
                 <div className={'options_canvas'}>
-                    <ButtonCSMP onClick={this.openOptionsModal} text={'Options'} variant={'outlined'} className={'export_button'}/>
+                    <ButtonCSMP  text={'Options'} variant={'outlined'} className={'export_button'}/>
                     <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
                     <ButtonCSMP onClick={this.exportData} text={'Export'} variant={'outlined'} className={'export_button'}/>
                     <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>

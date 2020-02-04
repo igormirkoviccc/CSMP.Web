@@ -121,6 +121,7 @@ class App extends Component {
                  onClickOperation={this.changeAddedItem}
                  onChangeWidth={this.onChangeWidth}/>
              <Canvas
+                 onModalOpenOptions={this.onModalOpenOptions}
                  onExportData={this.exportData}
                  modalClose={this.modalClose}
                  onModalOpen={this.changeAddedRelationship}
