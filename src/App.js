@@ -3,6 +3,8 @@ import './style/test.scss'
 import ResizibleSideNav from "./components/context/ResizibleSideNav";
 import Canvas from "./components/context/Canvas";
 import SideBarInfo from "./components/context/SideBarInfo";
+import * as FileSaver from 'file-saver';
+import * as XLSX from 'xlsx';
 
 let OperationID = 1;
 
@@ -31,8 +33,13 @@ class App extends Component {
         }))
     };
 
+
     updateRelationships = (relationships) =>{
-        this.setState({relationShips: relationships})
+        if(this.state.relationShips.length === 0){
+            this.state.relationShips = relationships;
+        }else{
+            this.setState({relationShips: relationships})
+        }
     };
 
     changeAddedItem = (operationArg) =>{
@@ -71,15 +78,61 @@ class App extends Component {
         this.setState({currentItems})
     };
 
+    makeDataForExport = () =>{
+      let exportData = [];
+      this.state.currentItems.forEach((item) => {
+          exportData.push({
+              'R.B.': item.OperationID,
+              'TIP': item.label.toUpperCase(),
+              'U1': item.inputsArray[0] && item.inputsArray[0].node ? item.inputsArray[0].node.OperationID : 0,
+              'U2': item.inputsArray[1] && item.inputsArray[1].node ? item.inputsArray[1].node.OperationID : 0,
+              'U3': item.inputsArray[2] && item.inputsArray[2].node ? item.inputsArray[2].node.OperationID : 0,
+              'P1': item.inputs[0] ? item.inputs[0].value : 0,
+              'P2': item.inputs[1] ? item.inputs[1].value : 0,
+              'P3': item.inputs[2] ? item.inputs[2].value : 0
+          })
+      });
+      return exportData;
+    };
+
+
+    exportData = () =>{
+        const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
+        const fileExtension = '.xlsx';
+        console.log(this.makeDataForExport())
+        const ws = XLSX.utils.json_to_sheet(this.makeDataForExport());
+        const wb = { Sheets: { 'data': ws }, SheetNames: ['data'] };
+        const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
+        const data = new Blob([excelBuffer], {type: fileType});
+        FileSaver.saveAs(data, 'export' + fileExtension);
+    };
+
 
 
     render(){
-        console.log(this.state.currentItems);
         return(
          <div className="App">
-             <ResizibleSideNav onClickOperation={this.changeAddedItem} onChangeWidth={this.onChangeWidth}/>
-             <Canvas modalClose={this.modalClose} onModalOpen={this.changeAddedRelationship} changeSelectedItem={this.changeSelectedItem} updateCurrentItems={this.updateCurrentItems} modalOpen={this.state.modalOpen} modalMode={this.state.modalMode} onAddingOperation={this.onAddingOperation} addedItem={this.state.addedItem} updateRelationships={this.updateRelationships} relationShips={this.state.relationShips} onAddingRelationship={this.onAddingRelationship}  currentItems={this.state.currentItems} resizableWidth={this.state.resizableWidth}/>
-             <SideBarInfo selectedItem={this.state.selectedItem} currentItems={this.state.currentItems}/>
+             <ResizibleSideNav
+                 onClickOperation={this.changeAddedItem}
+                 onChangeWidth={this.onChangeWidth}/>
+             <Canvas
+                 onExportData={this.exportData}
+                 modalClose={this.modalClose}
+                 onModalOpen={this.changeAddedRelationship}
+                 changeSelectedItem={this.changeSelectedItem}
+                 updateCurrentItems={this.updateCurrentItems}
+                 modalOpen={this.state.modalOpen}
+                 modalMode={this.state.modalMode}
+                 onAddingOperation={this.onAddingOperation}
+                 addedItem={this.state.addedItem}
+                 updateRelationships={this.updateRelationships}
+                 relationShips={this.state.relationShips}
+                 onAddingRelationship={this.onAddingRelationship}
+                 currentItems={this.state.currentItems}
+                 resizableWidth={this.state.resizableWidth}/>
+             <SideBarInfo
+                 selectedItem={this.state.selectedItem}
+                 currentItems={this.state.currentItems}/>
          </div>
      )
     }

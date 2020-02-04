@@ -7,6 +7,7 @@ import ButtonCSMP from "../controllers/ButtonCSMP";
 import TooltipCSMP from "../controllers/TooltipCSMP";
 
 
+
 class Canvas extends Component{
     constructor(props){
         super(props);
@@ -56,6 +57,8 @@ class Canvas extends Component{
         this.props.updateRelationships(relationShips)
     };
 
+
+
     onPositionChange = (e,index)=>{
         let obj = {
             x: e.evt.x - 300,
@@ -63,21 +66,13 @@ class Canvas extends Component{
         };
 
         this.changeRelationshipsPosition(e,index);
-        if(index === this.state.selectedIndex){
-            this.setState({selectedPosition: obj})
-        }
-        if(index === this.state.referenceIndex){
-            this.setState({referencePosition: obj})
-        }
     };
 
-
     updateDataForRelationship = (changed) =>{
-        console.log(this.state.referencedItem.inputsArray.length);
-        console.log(this.state.referencedItem.maxInputs);
-        if(this.state.referencedItem.inputsArray.length + 1 <= this.state.referencedItem.maxInputs){
+        if(this.state.referencedItem.inputsArray.length + 1 <= this.state.referencedItem.maxInputs && !this.state.selectedItem.export){
             this.state.referencedItem.inputsArray.push({node: this.state.selectedItem, location: changed});
             this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
+            this.state.selectedItem['export'] = this.state.referencedItem;
         }
     };
 
@@ -142,13 +137,12 @@ class Canvas extends Component{
 
         for (let i = 0; i < currentItems.length; i++) {
             for (let j = 0; j < currentItems[i].inputsArray.length; j++) {
-                if(this.state.selectedItem.OperationID === currentItems[i].inputsArray[j].OperationID){
+                if(this.state.selectedItem.OperationID === currentItems[i].inputsArray[j].node.OperationID){
                     currentItems[i].inputsArray.splice(j,1);
                 }
             }
         }
-
-        relationships.forEach((item, index) =>{
+            relationships.forEach((item, index) =>{
             if(item['first_node_ref'] === this.state.selectedItem){
                 deletedRelatioships.push(item);
             } else if(item['second_node_ref'] === this.state.selectedItem){
@@ -162,10 +156,14 @@ class Canvas extends Component{
         this.props.updateRelationships(difference);
         this.unSelectOperation();
     };
+
+    exportData = () =>{
+        this.props.onExportData();
+    };
     render(){
         return (
             <div className='canvas_context'>
-                {this.props.modalOpen ? <ParametarsModal openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
+                {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
                     onWheel={this.unSelectOperation}
                     width={window.innerWidth - this.props.resizableWidth - 100}
@@ -177,7 +175,7 @@ class Canvas extends Component{
                     </Layer>
                 </Stage>
                 <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
-                <ButtonCSMP text={'Export'} variant={'outlined'} className={'export_button'}/>
+                <ButtonCSMP onClick={this.exportData} text={'Export'} variant={'outlined'} className={'export_button'}/>
                 <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>
             </div>
         );

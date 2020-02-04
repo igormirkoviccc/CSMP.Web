@@ -70,6 +70,7 @@ export default class ParametarsModal extends Component{
         })
     };
 
+
     handleChangeCheckbox = (value, index) =>{
         switch (index) {
             case 0:
@@ -101,7 +102,6 @@ export default class ParametarsModal extends Component{
     renderInputs = () =>{
         let arrayOfCheckboxControlers = [];
         for (let i = 0; i < this.props.referencedItem.maxInputs ; i++) {
-            console.log(this.checkIfItHas(i))
             arrayOfCheckboxControlers.push(
                 <CheckboxCSMP disabled={this.checkIfItHas(i)} onChange={this.handleChangeCheckbox} index={i} checked={this.getCheckedValues(i)} className='csmp_checkbox' label={'Ulaz '+ (i+1)}/>
             )
@@ -119,13 +119,13 @@ export default class ParametarsModal extends Component{
             this.props.item.parametrs.forEach((item, index) =>{
                 switch (index) {
                     case 0:
-                        addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldOneValue)});
+                        addingItem['inputs'].push({label: item, value: parseFloat(this.state.textFieldOneValue)});
                         return;
                     case 1:
-                        addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldSecondValue)});
+                        addingItem['inputs'].push({label: item, value: parseFloat(this.state.textFieldSecondValue)});
                         return;
                     case 2:
-                        addingItem['inputs'].push({label: item, value: parseInt(this.state.textFieldThirdValue)});
+                        addingItem['inputs'].push({label: item, value: parseFloat(this.state.textFieldThirdValue)});
                         return;
                     default:
                         break;
@@ -133,9 +133,13 @@ export default class ParametarsModal extends Component{
             });
             this.props.onAddingOperation(addingItem)
         }else if(this.props.modalMode === 'adding_relationship'){
-            console.log('im here');
-            this.props.openModalOnRelationships(this.state.changed);
+            if(this.state.changed !== 0){
+                this.props.openModalOnRelationships(this.state.changed);
+            }
         }
+    };
+    handleClose = () =>{
+        this.props.modalClose();
     };
 
     render() {
@@ -146,6 +150,7 @@ export default class ParametarsModal extends Component{
                     aria-describedby="transition-modal-description"
                     open={this.props.modalOpen}
                     closeAfterTransition
+                    onClose={this.handleClose}
                     BackdropComponent={Backdrop}
                     BackdropProps={{
                         timeout: 500,

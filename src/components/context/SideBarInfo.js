@@ -16,6 +16,31 @@ class SideBarInfo extends Component{
         })
     };
 
+    renderSideInfoInputs = () =>{
+        return this.props.selectedItem.inputsArray.map((item, index) =>{
+            return <div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.node.OperationID}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.node.name}</div></div>
+        })
+    };
+
+    renderBoth = () =>{
+        let array = [];
+        array.push(<div>Parametri</div>)
+        this.props.selectedItem.inputs.forEach((item) =>{
+            array.push(<div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>);
+        });
+        array.push(<div>Ulazi</div>)
+        this.props.selectedItem.inputsArray.forEach((item) =>{
+            array.push(<div><div style={{display: 'inline-block'}}>{item.node.OperationID+'.'}</div><div style={{display: 'inline-block'}}>{item.node.name}</div></div>);
+        });
+        return array;
+    };
+
+    renderExport = () =>{
+        if(this.props.selectedItem.export){
+                return <div><div style={{display: 'inline-block'}}>{this.props.selectedItem.export.OperationID+'. '}</div><div style={{display: 'inline-block'}}>{this.props.selectedItem.export.name}</div></div>
+        }
+    };
+
     renderSideInfoOperations = () =>{
         return this.props.currentItems.map((item, index) =>{
             return <SideBarInfoOperation key={'_' +index} index={index} item={item}/>
@@ -40,7 +65,7 @@ class SideBarInfo extends Component{
                                 Ulazi/Parametri
                             </div>
                             <div className='sidebarinfo_content'>
-                                {this.props.selectedItem ? this.renderSideInfoParametars() : null}
+                                {this.props.selectedItem ? this.renderBoth() : null}
                             </div>
                         </div>
                         <div className='sidebarinfo_outputs'>
@@ -48,7 +73,7 @@ class SideBarInfo extends Component{
                                 Izlazi
                             </div>
                             <div className='sidebarinfo_content'>
-
+                                {this.props.selectedItem ? this.renderExport() : null}
                             </div>
                         </div>
                     </div>
