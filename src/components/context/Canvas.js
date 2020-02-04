@@ -160,6 +160,11 @@ class Canvas extends Component{
     exportData = () =>{
         this.props.onExportData();
     };
+
+    openOptionsModal = () =>{
+        this.props.onModalOpenOptions();
+    };
+
     render(){
         return (
             <div className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
@@ -175,11 +180,12 @@ class Canvas extends Component{
                     </Layer>
                 </Stage>
                 <div className={'options_canvas'}>
-                <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
-                <ButtonCSMP onClick={this.exportData} text={'Export'} variant={'outlined'} className={'export_button'}/>
-                <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>
+                    <ButtonCSMP onClick={this.openOptionsModal} text={'Options'} variant={'outlined'} className={'export_button'}/>
+                    <ButtonCSMP onClick={this.deleteNode} text={'Delete'} variant={'outlined'} color="secondary" className={'delete_button'}/>
+                    <ButtonCSMP onClick={this.exportData} text={'Export'} variant={'outlined'} className={'export_button'}/>
+                    <TooltipCSMP className={'tooltip_csmp'} title={global._info}/>
                 </div>
-                </div>
+            </div>
         );
     }
 }

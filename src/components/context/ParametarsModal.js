@@ -142,6 +142,10 @@ export default class ParametarsModal extends Component{
         this.props.modalClose();
     };
 
+    // renderTextFieldsOptions = () =>{
+    //     return <div><TextfieldCSMP/><TextfieldCSMP/><TextfieldCSMP/></div>
+    // };
+
     render() {
         return (
             <div>

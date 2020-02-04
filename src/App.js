@@ -66,6 +66,10 @@ class App extends Component {
         this.setState({modalOpen: true, modalMode: 'adding_relationship'});
     };
 
+    onModalOpenOptions = () =>{
+        this.setState({modalOpen: true, modalMode: 'simulation_options'});
+    };
+
     modalClose = () =>{
         this.setState({modalOpen: false, modalMode: ''});
     };
