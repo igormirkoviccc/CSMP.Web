@@ -14,7 +14,7 @@ class App extends Component {
         super(props);
         this.state = {
             addedItem: null,
-            resizableWidth: 0,
+            resizableWidth: 300,
             currentItems:[],
             relationShips: [],
             modalOpen: false,
@@ -113,6 +113,7 @@ class App extends Component {
         return(
          <div className="App">
              <ResizibleSideNav
+                 width={this.state.resizableWidth}
                  onClickOperation={this.changeAddedItem}
                  onChangeWidth={this.onChangeWidth}/>
              <Canvas

@@ -43,7 +43,7 @@ class Canvas extends Component{
 
     changeRelationshipsPosition = (e,index)=>{
         let obj = {
-            x: e.evt.x - 300,
+            x: e.evt.x - this.props.resizableWidth,
             y: e.evt.y
         };
         let relationShips = this.props.relationShips.slice();
