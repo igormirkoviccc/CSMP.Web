@@ -91,7 +91,7 @@ class CustomizeCanvasOperation extends Component{
                         stroke="black"
                     />
                     {/*<Text offsetY={-2} offsetX={-2} text={this.props.item.OperationID}/>*/}
-                    <Group offsetX={-10} offsetY={-10}>
+                    <Group offsetX={-5} offsetY={-5}>
                     <Image image={this.state.image} space="fill"/>
                     </Group>
                 </Group>
