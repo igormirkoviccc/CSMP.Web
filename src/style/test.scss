@@ -81,7 +81,7 @@ html, body, .App, #root {
   display: inline-block;
   background-image: url("../assets/img/canvasbackground.png");
   background-position: right;
-  overflow: hidden;
+  overflow: auto;
   position: relative;
 
 
@@ -213,9 +213,9 @@ html, body, .App, #root {
 }
 
 .options_canvas{
-  position: absolute;
+  position: fixed;
   top: 20px;
-  right: 20px;
+  right: 320px;
   display: flex;
   justify-content: space-between;
   width: 300px;
@@ -233,3 +233,4 @@ html, body, .App, #root {
   cursor: pointer;
   user-select: none;
 }
+

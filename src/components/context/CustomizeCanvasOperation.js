@@ -56,7 +56,7 @@ class CustomizeCanvasOperation extends Component{
         return (
             <Label
                 onDragMove={e => {this.props.onPositionChange(e,this.props.index)}}
-                onDblClick={(e) => this.actionOnOperation(e, this.props.index)}
+                onClick={(e) => this.actionOnOperation(e, this.props.index)}
                 x={this.state.x}
                 y={this.state.y}
                 onMouseEnter={() => {
@@ -65,17 +65,15 @@ class CustomizeCanvasOperation extends Component{
                 onMouseLeave={() => {
                     document.body.style.cursor = "default";
                 }}
+                dragBoundFunc={(pos) =>{
+                    console.log(pos)
+                    return pos
+                }}
 
             >
                 <Group width={51}
                        height={51}
                        draggable
-
-                    // dragBoundFunc={(pos) =>{
-                       //     console.log(pos)
-                       //     return pos
-                       // }}
-
                 >
                     <Rect
                         fillPatternImage={('../operations/'+this.props.item.img +'.png')}

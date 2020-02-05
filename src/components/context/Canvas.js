@@ -185,7 +185,7 @@ class Canvas extends Component{
 
     render(){
         return (
-            <div className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
+            <div onClick={(e) =>this.unSelectOperation(e)}  className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
                 {this.renderOptionsModal()}
                 {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
