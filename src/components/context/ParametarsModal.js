@@ -18,7 +18,7 @@ export default class ParametarsModal extends Component{
             checkboxOneValue: this.props.referencedItem ? !!((this.props.referencedItem.inputsArray[0] && this.props.referencedItem.inputsArray[0].location === 1) || (this.props.referencedItem.inputsArray[1] && this.props.referencedItem.inputsArray[1].location === 1) || (this.props.referencedItem.inputsArray[2] && this.props.referencedItem.inputsArray[2].location === 1)) : null,
             checkboxTwoValue: this.props.referencedItem ? !!((this.props.referencedItem.inputsArray[0] && this.props.referencedItem.inputsArray[0].location === 2) || (this.props.referencedItem.inputsArray[1] && this.props.referencedItem.inputsArray[1].location === 2) || (this.props.referencedItem.inputsArray[2] && this.props.referencedItem.inputsArray[2].location === 2)) : null,
             checkboxThirdValue: this.props.referencedItem ? !!((this.props.referencedItem.inputsArray[0] && this.props.referencedItem.inputsArray[0].location === 3) || (this.props.referencedItem.inputsArray[1] && this.props.referencedItem.inputsArray[1].location === 3) || (this.props.referencedItem.inputsArray[2] && this.props.referencedItem.inputsArray[2].location === 3)) : null,
-            changed: 0
+            changed: 0,
         }
     }
 
@@ -149,6 +149,8 @@ export default class ParametarsModal extends Component{
             return this.renderInputs();
         }
     };
+
+
 
     render() {
         return (

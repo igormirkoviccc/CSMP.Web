@@ -2,9 +2,6 @@ import React, {Component} from 'react';
 import '../../style/test.scss'
 import Operation from "../Operation";
 
-
-
-
 class ResizibleSideNav extends Component{
     constructor(props){
         super(props);
@@ -19,11 +16,11 @@ class ResizibleSideNav extends Component{
                 this.props.onChangeWidth((parseInt(getComputedStyle(document.getElementsByClassName('resize_side_nav_container')[0], '').width) - dx));
             });
 
-    }
+    };
 
     addToArray = (item) =>{
         this.props.onClickOperation(item);
-    }
+    };
 
     mapData = () =>{
         let data = JSON.parse(JSON.stringify(global._data));
@@ -44,7 +41,7 @@ class ResizibleSideNav extends Component{
         document.addEventListener("mouseup", ()=>{
             document.removeEventListener("mousemove", this.onResize, false);
         }, false);
-    }
+    };
 
     render(){
         return (

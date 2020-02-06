@@ -34,7 +34,6 @@ class App extends Component {
         }))
     };
 
-
     updateRelationships = (relationships) =>{
         if(this.state.relationShips.length === 0){
             this.state.relationShips = relationships;
@@ -102,8 +101,6 @@ class App extends Component {
 
 
     exportData = () =>{
-
-
         const fileType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8';
         const fileExtension = '.xlsx';
         const ws = XLSX.utils.json_to_sheet(this.makeDataForExport());
@@ -111,7 +108,6 @@ class App extends Component {
         const wb = XLSX.utils.book_new();
         XLSX.utils.book_append_sheet(wb, ws,"Konfiguraciona tabela");
         XLSX.utils.book_append_sheet(wb, ws1,"Opcije");
-        // const wb = { Sheets: [{ 'data': ws}, {'data1':ws1 }], SheetNames: ['data','data1'] };
         const excelBuffer = XLSX.write(wb, { bookType: 'xlsx', type: 'array' });
         const data = new Blob([excelBuffer], {type: fileType});
         FileSaver.saveAs(data, 'export' + fileExtension);
@@ -120,8 +116,6 @@ class App extends Component {
     saveOptionsData = (data) =>{
         this.setState({optionsData: data})
     };
-
-
 
     render(){
         return(

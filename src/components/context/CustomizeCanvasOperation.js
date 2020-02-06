@@ -49,9 +49,6 @@ class CustomizeCanvasOperation extends Component{
         };
     }
 
-
-
-
     render(){
         return (
             <Label

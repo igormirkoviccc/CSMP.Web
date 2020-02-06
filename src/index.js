@@ -260,7 +260,7 @@ global._data = [
         name: 'Vreme',
         label: 't',
         parametrs : [],
-        maxInputs: 2,
+        maxInputs: 0,
         img: 'vreme',
         inputs: [],
         inputsArray: []

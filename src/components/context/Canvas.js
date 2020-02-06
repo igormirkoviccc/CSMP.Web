@@ -62,16 +62,11 @@ class Canvas extends Component{
 
 
     onPositionChange = (e,index)=>{
-        let obj = {
-            x: e.evt.x - 300,
-            y: e.evt.y
-        };
-
         this.changeRelationshipsPosition(e,index);
     };
 
     updateDataForRelationship = (changed) =>{
-        if(this.state.referencedItem.inputsArray.length + 1 <= this.state.referencedItem.maxInputs && !this.state.selectedItem.export){
+        if(this.state.referencedItem.inputsArray.length + 1 <= this.state.referencedItem.maxInputs){
             this.state.referencedItem.inputsArray.push({node: this.state.selectedItem, location: changed});
             this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
             this.state.selectedItem['export'] = this.state.referencedItem;
@@ -185,7 +180,7 @@ class Canvas extends Component{
 
     render(){
         return (
-            <div onClick={(e) =>this.unSelectOperation(e)}  className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
+            <div  className='canvas_context' style={{width: window.screen.width - this.props.resizableWidth - 300}}>
                 {this.renderOptionsModal()}
                 {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
