@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import '../../style/test.scss'
 import SideBarInfoOperation from "./SideBarInfoOperation";
+import {TextField} from "@material-ui/core";
 
 
 
@@ -22,11 +23,18 @@ class SideBarInfo extends Component{
         })
     };
 
+    enterClicked = (e, index) =>{
+        if (e.keyCode === 13) {
+            this.props.onSelectedItemChange(e.target.value, index);
+        }
+    };
+
     renderBoth = () =>{
         let array = [];
         array.push(<div>Parametri</div>)
         this.props.selectedItem.inputs.forEach((item, index) =>{
-            array.push(<div><div key={'_'+index} style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div><div style={{display: 'inline-block', width: 50 + '%'}}>{item.value}</div></div>);
+            array.push(<div><div key={'_'+index} style={{display: 'inline-block', width: 50 + '%'}}>{item.label}</div>
+                <input onKeyDown={(e) => this.enterClicked(e, index)} defaultValue={item.value} style={{display: 'inline-block', width: 30 + '%'}}/></div>);
         });
         array.push(<div>Ulazi</div>)
         this.props.selectedItem.inputsArray.forEach((item,index) =>{

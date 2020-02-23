@@ -150,6 +150,11 @@ export default class ParametarsModal extends Component{
         }
     };
 
+    checkIfAll = () =>{
+        if(this.props.modalMode === 'adding_relationship')
+        return this.props.referencedItem.inputsArray.length === this.props.referencedItem.maxInputs;
+    };
+
 
 
     render() {
@@ -169,7 +174,7 @@ export default class ParametarsModal extends Component{
                     <Fade in={this.props.modalOpen}>
                         <div className={'csmp_modal'}>
                             {this.checkModalMode()}
-                            <ButtonCSMP variant={'contained'} text={'Save'} onClick={this.saveInputs}/>
+                            <ButtonCSMP disabled={this.checkIfAll()} variant={'contained'} text={'Save'} onClick={this.saveInputs}/>
                         </div>
                     </Fade>
                 </Modal>

@@ -117,6 +117,13 @@ class App extends Component {
         this.setState({optionsData: data})
     };
 
+    changeSelectedItemInput = (value, index) =>{
+      let selectedItem = this.state.selectedItem;
+      selectedItem['inputs'][index]['value'] = value;
+      this.setState({selectedItem})
+    };
+
+
     render(){
         return(
          <div className="App">
@@ -142,6 +149,7 @@ class App extends Component {
                  saveOptionsData={this.saveOptionsData}
                  resizableWidth={this.state.resizableWidth}/>
              <SideBarInfo
+                 onSelectedItemChange={this.changeSelectedItemInput}
                  selectedItem={this.state.selectedItem}
                  currentItems={this.state.currentItems}/>
          </div>

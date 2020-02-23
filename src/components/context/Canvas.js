@@ -184,7 +184,7 @@ class Canvas extends Component{
                 {this.renderOptionsModal()}
                 {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
-                    onWheel={this.unSelectOperation}
+                    onDblClick={this.unSelectOperation}
                     width={window.innerWidth - this.props.resizableWidth - 100}
                     height={window.innerHeight}
                 >
