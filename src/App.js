@@ -20,7 +20,7 @@ class App extends Component {
             modalOpen: false,
             modalMode: '',
             selectedItem: null,
-            optionsData: []
+            optionsData: [],
         }
     }
 
@@ -122,6 +122,7 @@ class App extends Component {
       selectedItem['inputs'][index]['value'] = value;
       this.setState({selectedItem})
     };
+
 
 
     render(){

@@ -63,7 +63,6 @@ class CustomizeCanvasOperation extends Component{
                     document.body.style.cursor = "default";
                 }}
                 dragBoundFunc={(pos) =>{
-                    console.log(pos)
                     return pos
                 }}
 

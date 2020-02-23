@@ -267,7 +267,13 @@ global._data = [
     },
 ];
 
-global._info = "This is CSMP application for simulation diferent proccess. On left side bar there is block(operations) and on click on them you add to canvas. On double click on operation you can take action, to delete it, to link it to other block. Purple color of block means you can link it with green one. "
+global._info = "1. You can select block by clicking on it, and unselect it by double clicking on it. \n" +
+    "2. Green block with border on canvas is the selected one and purple blocks are availabe blocks to make relationships with.\n" +
+    "3. In case you don't see all the blocks you picked, you can zoom or unzoom your working sheet on mouse wheel.\n" +
+    "4. On side bar info you can change block's parameters and save it by clicking on enter.\n" +
+    "5. Clicking on \"OPTIONS\" you set parameters of entire simulation.\n" +
+    "6. On \"DELETE\" you remove selected node and all relationships made with it.\n" +
+    "7. On \"EXPORT\" you download Excel file of your simulation data. "
 
 ReactDOM.render(<App />, document.getElementById('root'));
 

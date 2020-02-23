@@ -20,7 +20,10 @@ class Canvas extends Component{
             selectedItem: null,
             referencedItem: null,
             selectedArrow: null,
-            optionsModal: false
+            optionsModal: false,
+            stageScale: 1,
+            // stageX: 0,
+            // stageY: 0
         };
         this.myRef = React.createRef();
     }
@@ -43,10 +46,32 @@ class Canvas extends Component{
             })
     };
 
+    handleWheel = e => {
+        e.evt.preventDefault();
+
+        const scaleBy = 1.02;
+        const stage = e.target.getStage();
+        const oldScale = stage.scaleX();
+        const mousePointTo = {
+            x: stage.getPointerPosition().x / oldScale - stage.x() / oldScale,
+            y: stage.getPointerPosition().y / oldScale - stage.y() / oldScale
+        };
+
+        const newScale = e.evt.deltaY > 0 ? oldScale * scaleBy : oldScale / scaleBy;
+
+        this.setState({
+            stageScale: newScale,
+            stageX:
+                -(mousePointTo.x - stage.getPointerPosition().x / newScale) * newScale,
+            stageY:
+                -(mousePointTo.y - stage.getPointerPosition().y / newScale) * newScale
+        });
+    };
+
     changeRelationshipsPosition = (e,index)=>{
         let obj = {
-            x: e.evt.x - this.props.resizableWidth,
-            y: e.evt.y
+            x: ((e.evt.x - this.props.resizableWidth) * (1/this.state.stageScale)),
+            y: (e.evt.y * (1/this.state.stageScale))
         };
         let relationShips = this.props.relationShips.slice();
         relationShips.forEach((part, count) => {
@@ -66,9 +91,17 @@ class Canvas extends Component{
     };
 
     updateDataForRelationship = (changed) =>{
+        let selectedPosition = this.state.selectedPosition;
+        let referencePosition = this.state.referencePosition;
+
+        selectedPosition['x'] = selectedPosition['x'] * 1/this.state.stageScale;
+        selectedPosition['y'] = selectedPosition['y'] * 1/this.state.stageScale;
+        referencePosition['x'] = referencePosition['x'] * 1/this.state.stageScale;
+        referencePosition['y'] = referencePosition['y'] * 1/this.state.stageScale;
+
         if(this.state.referencedItem.inputsArray.length + 1 <= this.state.referencedItem.maxInputs){
             this.state.referencedItem.inputsArray.push({node: this.state.selectedItem, location: changed});
-            this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': this.state.selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':this.state.referencePosition, 'second_node_ref':this.state.referencedItem})
+            this.onAddingRelationship({'first_node': this.state.selectedIndex, 'first_node_ref':this.state.selectedItem, 'first_node_position': selectedPosition, 'second_node':this.state.referenceIndex, 'second_node_position':referencePosition, 'second_node_ref':this.state.referencedItem})
             this.state.selectedItem['export'] = this.state.referencedItem;
         }
     };
@@ -184,9 +217,14 @@ class Canvas extends Component{
                 {this.renderOptionsModal()}
                 {this.props.modalOpen ? <ParametarsModal modalClose={this.props.modalClose} openModalOnRelationships={this.openModalOnRelationships} referencedItem={this.state.referencedItem} modalOpen={this.props.modalOpen} modalMode={this.props.modalMode} onAddingOperation={this.props.onAddingOperation} item={this.props.addedItem}/> : null }
                 <Stage
+                    onWheel={this.handleWheel}
                     onDblClick={this.unSelectOperation}
                     width={window.innerWidth - this.props.resizableWidth - 100}
                     height={window.innerHeight}
+                    scaleX={this.state.stageScale}
+                    scaleY={this.state.stageScale}
+                    // x={this.state.stageX}
+                    // y={this.state.stageY}
                 >
                     <Layer>
                         {this.renderCanvasOperations()}
