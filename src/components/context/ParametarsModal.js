@@ -108,7 +108,7 @@ export default class ParametarsModal extends Component{
         }
 
         if(this.props.referencedItem.maxInputs === 0){
-            arrayOfCheckboxControlers.push(<div>Ne moze se povezati {this.props.referencedItem.name}!</div>)
+            arrayOfCheckboxControlers.push(<div>{this.props.referencedItem.name} cannot have inputs!</div>)
         }
         return arrayOfCheckboxControlers;
     };

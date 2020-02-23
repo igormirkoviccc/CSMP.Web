@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="60447916-8126-42f3-b393-15fcf7f9990d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/context/Canvas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/Canvas.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/context/ParametarsModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,18 +54,6 @@
       <recent name="C:\Work\csmpweb\src\components\context" />
       <recent name="C:\Work\csmpweb\src\style" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="npm.npm start">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
@@ -125,6 +109,8 @@
       <workItem from="1580562283036" duration="51277000" />
       <workItem from="1580682485392" duration="55000" />
       <workItem from="1580688067493" duration="5862000" />
+      <workItem from="1582235222069" duration="982000" />
+      <workItem from="1582475072583" duration="6656000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1576777180926</created>
@@ -315,7 +301,21 @@
       <option name="project" value="LOCAL" />
       <updated>1580689559017</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="enabling changing params in sidebarnav and disabling button save">
+      <created>1582477955127</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1582477955127</updated>
+    </task>
+    <task id="LOCAL-00029" summary="making zoom and unzoom canvas">
+      <created>1582481523856</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1582481523856</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,8 +345,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Initial commit" />
-    <MESSAGE value="test" />
     <MESSAGE value="removing conva library" />
     <MESSAGE value="building .. :)" />
     <MESSAGE value="adding ref to rect" />
@@ -370,16 +368,19 @@
     <MESSAGE value="stop referencing global ._data" />
     <MESSAGE value="modal not showing on 0 parametars block" />
     <MESSAGE value="modal relationships fixed.." />
-    <option name="LAST_COMMIT_MESSAGE" value="modal relationships fixed.." />
+    <MESSAGE value="enabling changing params in sidebarnav and disabling button save" />
+    <MESSAGE value="making zoom and unzoom canvas" />
+    <option name="LAST_COMMIT_MESSAGE" value="making zoom and unzoom canvas" />
   </component>
   <component name="WindowStateProjectService">
     <state x="718" y="216" width="652" height="620" key="#npm_start" timestamp="1579273133610">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
     <state x="718" y="216" width="652" height="620" key="#npm_start/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579273133610" />
-    <state x="525" y="142" width="860" height="807" key="CommitChangelistDialog2" timestamp="1579276622729">
-      <screen x="0" y="47" width="1920" height="980" />
+    <state x="525" y="103" width="881" height="912" key="CommitChangelistDialog2" timestamp="1582481523802">
+      <screen x="0" y="27" width="1920" height="988" />
     </state>
+    <state x="525" y="103" width="881" height="912" key="CommitChangelistDialog2/0.27.1920.988@0.27.1920.988" timestamp="1582481523802" />
     <state x="525" y="142" width="860" height="807" key="CommitChangelistDialog2/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579276622729" />
     <state x="743" y="304" width="424" height="484" key="FileChooserDialogImpl" timestamp="1579273067608">
       <screen x="0" y="47" width="1920" height="980" />
@@ -401,10 +402,23 @@
       <screen x="0" y="47" width="1920" height="980" />
     </state>
     <state width="1874" height="261" key="GridCell.Tab.0.right/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579274549660" />
-    <state x="555" y="282" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1579276628472">
-      <screen x="0" y="47" width="1920" height="980" />
+    <state x="555" y="264" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1582481528806">
+      <screen x="0" y="27" width="1920" height="988" />
     </state>
+    <state x="555" y="264" key="Vcs.Push.Dialog.v2/0.27.1920.988@0.27.1920.988" timestamp="1582481528806" />
     <state x="555" y="282" width="800" height="528" key="Vcs.Push.Dialog.v2/0.47.1920.980/1920.0.1920.1080@0.47.1920.980" timestamp="1579276628472" />
+    <state x="616" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1582475082753">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="616" y="347" key="com.intellij.ide.util.TipDialog/0.27.1920.988@0.27.1920.988" timestamp="1582475082753" />
+    <state x="605" y="231" width="709" height="578" key="find.popup" timestamp="1582481822126">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="605" y="231" width="709" height="578" key="find.popup/0.27.1920.988@0.27.1920.988" timestamp="1582481822126" />
+    <state x="570" y="313" width="770" height="413" key="git4idea.merge.GitPullDialog" timestamp="1582477978343">
+      <screen x="0" y="27" width="1920" height="988" />
+    </state>
+    <state x="570" y="313" width="770" height="413" key="git4idea.merge.GitPullDialog/0.27.1920.988@0.27.1920.988" timestamp="1582477978343" />
     <state x="675" y="357" width="550" height="377" key="jetbrains.nodejs.interpreters-dialog" timestamp="1579273088718">
       <screen x="0" y="47" width="1920" height="980" />
     </state>
